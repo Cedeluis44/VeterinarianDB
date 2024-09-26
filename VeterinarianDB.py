@@ -1,16 +1,20 @@
 # Flask SQL Alchemy
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, current_app, render_template, flash
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from flask_principal import Principal, Permission, RoleNeed, identity_loaded, UserNeed, identity_changed, Identity
-from flask_login import LoginManager, UserMixin, login_user, current_user, login_required
+from flask_login import LoginManager, UserMixin, login_user, current_user, login_required, logout_user
 from flask_sqlalchemy import SQLAlchemy
 from flask import redirect, url_for, request
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField
+from wtforms.validators import DataRequired
 from sqlalchemy import create_engine
 from sqlalchemy import Table, MetaData
 from sqlalchemy.sql import select
 from sqlalchemy import delete
 import json
+from werkzeug.security import check_password_hash, generate_password_hash
 
 
 connection_string = 'mysql+pymysql://root:my_password@127.0.0.1:3306/Veterinarian?autocommit=true'
@@ -19,7 +23,7 @@ conn = engine.connect()
 
 metadata = MetaData()
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='template')
 
 port_number = 7002
 
@@ -35,12 +39,13 @@ vet = Table('veterinarian', metadata, autoload_with=engine)
 # Configuration
 
 app.config['SECRET_KEY']='supersecretkey'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///rbac_veterinarian.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///rbac2_veterinarian.db'
 
 # Initialize extensions
 
 db = SQLAlchemy(app)
 login_manager = LoginManager(app)
+login_manager.login_view = 'login'
 principal = Principal(app)
 
 # Define User model
@@ -49,19 +54,31 @@ class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
     password = db.Column(db.String(80), nullable=False)
-    roles = db.column(db.String(80)) # A simple column to store user roles as a string
-
-# Set up user loader
+    roles = db.Column(db.String(80))  # A simple column to store user roles as a string
 
 @login_manager.user_loader
 def load_user(user_id):
-    return User.query.get((user_id))
+    return User.query.get(int(user_id))
 
-# Create roles
+class LoginForm(FlaskForm):
+    user = StringField('Username', validators=[DataRequired()])
+    password = PasswordField('Password', validators=[DataRequired()])
 
+# Define roles
 admin_permission = Permission(RoleNeed('admin'))
 editor_permission = Permission(RoleNeed('editor'))
 user_permission = Permission(RoleNeed('user'))
+
+@identity_loaded.connect_via(app)
+def on_identity_loaded(sender, identity):
+    identity.user = current_user
+    if hasattr(current_user, 'id'):
+        identity.provides.add(UserNeed(current_user.id))
+
+    # Add user roles to the identity
+    if hasattr(current_user, 'roles'):
+        for role in current_user.roles.split(','):
+            identity.provides.add(RoleNeed(role))
 
 # Create initial roles and users
 
@@ -69,36 +86,64 @@ user_permission = Permission(RoleNeed('user'))
 def create_users():
     db.create_all()
     if not User.query.filter_by(username='admin').first():
-        admin_user = User(username='admin', password='admin123', roles='admin')
-        editor_user = User(username='editor', password='editor123', roles='editor')
-        regular_user = User(username='regular', password='regular123', roles='regular')
+        admin_user = User(username='admin', password=generate_password_hash('admin123'), roles='admin')
+        editor_user = User(username='editor', password=generate_password_hash('editor123'), roles='editor')
+        regular_user = User(username='regular', password=generate_password_hash('regular123'), roles='user')
         db.session.add(admin_user)
         db.session.add(editor_user)
         db.session.add(regular_user)
         db.session.commit()
 
-# Simulate login for testing
+# Simulate login
 
-@app.route('/login/<username>')
-def login(username):
-    user = User.query.filter_by(username=username).first()
-    if user:
-        login_user(user)
-        identity_changed.send(app, identity=Identity(user.id))
-        return redirect(url_for('index'))
-    return f'User {username} not found', 404
+@app.route('/login', methods=['POST', 'GET'])
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+        log_user = form.user.data
+        log_password = form.password.data
 
-# Home route for testing
+        # Retrieve the user from the hypothetical datastore
+        user = User.query.filter_by(username=log_user).first()
+
+        # Compare passwords (use password hashing production)
+        if user and check_password_hash(user.password, log_password):
+            # Keep the user info in the session using Flask-Login
+            login_user(user)
+
+            # Tell Flask-Principal the identity changed
+            identity_changed.send(current_app._get_current_object(),
+                                  identity=Identity(user.id))
+
+            return redirect(url_for('home'))
+
+        flash('Invalid username or password', 'error')
+        return redirect(url_for('login'))
+
+    return render_template('login.html', form=form)
+
+# Home route
 
 @app.route('/')
-def index():
-    return jsonify({'message': 'Welcome to the RBAC API!'})
+def home():
+    if current_user.is_authenticated:
+        return f'Hello, {current_user.username}!'
+    return redirect(url_for('login'))
+
+# Logout route
+
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    flash('You have been logged out.', 'info')
+    return redirect(url_for('login'))
 
 # Rate limiter
 limiter = Limiter(
     key_func=get_remote_address,
     app=app,
-    default_limits=["3 per minute"]
+    default_limits=["5 per minute"]
 )
 
 # Codes to GET all the elements from the tables using HTTP
@@ -107,7 +152,8 @@ limiter = Limiter(
 @limiter.limit("2 per minute", override_defaults=True)
 @login_required
 @admin_permission.require(http_exception=403)
-def get_appoitnment():
+@editor_permission.require(http_exception=403)
+def get_appoitnment():    
     query = select(ap)
     appointments = conn.execute(query).fetchall()
     return json.dumps([row._asdict() for row in appointments])
@@ -115,6 +161,9 @@ def get_appoitnment():
 # curl -v http://localhost:7002/billings
 @app.route('/billings', methods=["GET"])
 @limiter.limit("2 per minute", override_defaults=True)
+@login_required
+@admin_permission.require(http_exception=403)
+@editor_permission.require(http_exception=403)
 def get_billing():
     query = select(bill)
     billings = conn.execute(query).fetchall()
@@ -123,6 +172,9 @@ def get_billing():
 # curl -v http://localhost:7002/clients
 @app.route('/clients', methods=["GET"])
 @limiter.limit("2 per minute", override_defaults=True)
+@login_required
+@admin_permission.require(http_exception=403)
+@editor_permission.require(http_exception=403)
 def get_client():
     query = select(cli)
     clients = conn.execute(query).fetchall()
@@ -133,6 +185,7 @@ def get_client():
 @limiter.limit("2 per minute", override_defaults=True)
 @login_required
 @admin_permission.require(http_exception=403)
+@editor_permission.require(http_exception=403)
 def get_owner():
     query = select(ow)
     owners = conn.execute(query).fetchall()
@@ -141,6 +194,9 @@ def get_owner():
 # curl -v http://localhost:7002/veterinarians
 @app.route('/veterinarians', methods=["GET"])
 @limiter.limit("2 per minute", override_defaults=True)
+@login_required
+@admin_permission.require(http_exception=403)
+@editor_permission.require(http_exception=403)
 def get_veterinarian():
     query = select(vet)
     veterinarians = conn.execute(query).fetchall()
@@ -641,4 +697,3 @@ def delete_billing(id):
 
 if __name__ == '__main__':
 	app.run(debug=True, host='0.0.0.0', port = port_number)
-
