@@ -5,8 +5,9 @@
 from flask import Flask, jsonify, request, current_app, make_response
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
+from flask_limiter.errors import RateLimitExceeded
 from flask_principal import Principal, Permission, RoleNeed, identity_loaded, UserNeed, identity_changed, Identity
-from flask_login import LoginManager, UserMixin, current_user
+from flask_login import LoginManager, UserMixin, current_user, login_user
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField
@@ -151,39 +152,31 @@ def token_required(f):
     @wraps(f)
     def decorated(*args, **kwargs):
         token = None
-
-        # Check if the token is passed in the Authorization header
-
         if 'Authorization' in request.headers:
             try:
-                token = request.headers['Authorization'].split(' ')[1] # Expects Bearer <token>
-            
+                token = request.headers['Authorization'].split(' ')[1]  # Bearer <token>
             except IndexError:
-                jsonify({'message': 'Token is missing or badly formatted!'}), 401
-        
+                return jsonify({'message': 'Token is missing or badly formatted!'}), 401
+
         if not token:
             return jsonify({'message': 'Token is missing!'}), 401
-            
+
         try:
             data = jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])
-            current_user = data['username']
-            user_role = data['role']  # Obtain Rol from token
-
-            # Configuring user identyty for Flask-Principal
-            identity_changed.send(current_app._get_current_object(),
-                                  identity = Identity(current_user))
+            user = User.query.filter_by(username=data['username']).first()
             
+            if user:
+                login_user(user)
+            
+            identity_changed.send(current_app._get_current_object(), identity=Identity(user.id))
+
         except jwt.ExpiredSignatureError:
             return jsonify({'message': 'Token has expired!'}), 401
-        
         except jwt.InvalidTokenError:
             return jsonify({'message': 'Token is invalid!'}), 401
-        
-        except IndexError:
-            return jsonify({'message': 'Authorization header is missing or malformed!'}), 401
-                
+
         return f(current_user, *args, **kwargs)
-            
+
     return decorated
 
 #############################################################################################################################
@@ -257,14 +250,23 @@ def forbidden_error(e):
 limiter = Limiter(
     key_func=get_remote_address,
     app=app,
-    default_limits=["10 per minute"]
+    default_limits=["100 per hour"]
 )
+
+# Manejador del error 429 para el rate limiting
+@app.errorhandler(RateLimitExceeded)
+def handle_rate_limit_exceeded(e):
+    return jsonify({
+        "message": "Rate limit exceeded: 100 requests per hour."
+    }), 429
 
 #############################################################################################################################
 
-@app.before_request
-def log_request():
-    current_app.logger.info(f"User {current_user.id if current_user else 'Guest'} accessed {request.path} - {request.method}")
+@app.after_request
+def log_request(response):
+    user_identity = current_user.username if current_user.is_authenticated else 'Guest'
+    current_app.logger.info(f"User {user_identity} accessed {request.path} - {request.method} - Status: {response.status}")
+    return response
 
 #############################################################################################################################
 
@@ -272,6 +274,7 @@ def log_request():
 
 # curl -X GET http://localhost:7002/appointments -H "Authorization: Bearer <token>"
 @app.route('/appointments', methods=["GET"])
+@limiter.limit("5 per minute")
 @token_required
 @all_permission.require(http_exception=403)
 def get_appoitnment(current_user): 
