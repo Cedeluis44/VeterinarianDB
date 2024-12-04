@@ -26,19 +26,6 @@ services:
         networks:
             - backend
 
-    app:
-        build:
-            context: /app
-        container_name: veterinarian_app
-        environment:
-            - FLASK_ENV=develoment
-        ports:
-            - "7002:7002"
-        depends_on:
-            - mysqlcontainer
-        networks:
-            - backend
-
 networks:
     backend:
 
