@@ -1,0 +1,6 @@
+# Ignorar el archivo de socket de MySQL
+database/mysql.sock
+
+# Ignorar cualquier archivo en database/ que no sea necesario
+database/*
+!database/archivo_importante.sql  # Si tienes un archivo que deseas mantener en el repositorio

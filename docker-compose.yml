@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+    flask-app:
+        container_name: flask-app
+        build: app
+        restart: always
+        ports:
+            - '5000:5000'
+        volumes:
+            - ./app:/app
+        networks:
+            - backend
+
+    mysqlcontainer:
+        container_name: mysqlcontainer
+        image: mysql:latest
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: my_password
+            MYSQL_DATABASE: Veterinarian
+        ports:
+            - '3308:3306'
+        volumes:
+            - ./database:/var/lib/mysql
+        networks:
+            - backend
+
+    app:
+        build:
+            context: /app
+        container_name: veterinarian_app
+        environment:
+            - FLASK_ENV=develoment
+        ports:
+            - "7002:7002"
+        depends_on:
+            - mysqlcontainer
+        networks:
+            - backend
+
+networks:
+    backend:
+
+volumes:
+    app:
+    database:

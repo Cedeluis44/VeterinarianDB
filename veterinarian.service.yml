@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: veterinarian-api-service
+  labels:
+    app: veterinarian-api
+spec:
+  type: LoadBalancer  # También puedes usar NodePort o ClusterIP
+  selector:
+    app: veterinarian-api
+  ports:
+  - protocol: TCP
+    port: 80  # Puerto expuesto externamente
+    targetPort: 7002  # Puerto donde Flask escucha en el contenedor

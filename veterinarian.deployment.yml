@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: veterinarian-api
+  labels:
+    app: veterinarian-api
+spec:
+  replicas: 3  # Número de réplicas del pod
+  selector:
+    matchLabels:
+      app: veterinarian-api
+  template:
+    metadata:
+      labels:
+        app: veterinarian-api
+    spec:
+      containers:
+      - name: veterinarian-api
+        image: cedeluis44/veterinarian-api:latest  # Imagen Docker de tu API
+        ports:
+        - containerPort: 7002  # Puerto donde Flask escucha
+        env:
+        - name: SECRET_KEY  # Ejemplo de variable de entorno
+          valueFrom:
+            secretKeyRef:
+              name: api-secrets
+              key: secret_key
+        - name: DATABASE_URL
+          valueFrom:
+            configMapKeyRef:
+              name: api-config
+              key: database_url
+        livenessProbe:
+          httpGet:
+            path: /health  # Endpoint que verifica la salud de la API
+            port: 7002
+          initialDelaySeconds: 3
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready  # Endpoint para verificar si está lista
+            port: 7002
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        volumeMounts:
+        - name: database-storage
+          mountPath: /data/db  # Donde se montará el volumen persistente
+      volumes:
+      - name: database-storage
+        persistentVolumeClaim:
+          claimName: db-pvc  # Referencia al PersistentVolumeClaim

@@ -2865,3 +2865,1957 @@ FROM appointment
 [2024-10-09 13:47:48,543] INFO | extension >>> ratelimit 5 per 1 minute (127.0.0.1) exceeded at endpoint: get_appoitnment
 [2024-10-09 13:47:48,543] INFO | VeterinarianDB >>> User Guest accessed /appointments - GET - Status: 429 TOO MANY REQUESTS
 [2024-10-09 13:47:48,543] INFO | _internal >>> 127.0.0.1 - - [09/Oct/2024 13:47:48] "[31m[1mGET /appointments HTTP/1.1[0m" 429 -
+[2024-10-09 16:10:48,674] INFO | base >>> SELECT DATABASE()
+[2024-10-09 16:10:48,675] INFO | base >>> [raw sql] {}
+[2024-10-09 16:10:48,684] INFO | base >>> SELECT @@sql_mode
+[2024-10-09 16:10:48,685] INFO | base >>> [raw sql] {}
+[2024-10-09 16:10:48,690] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-09 16:10:48,691] INFO | base >>> [raw sql] {}
+[2024-10-09 16:10:48,736] INFO | base >>> BEGIN (implicit)
+[2024-10-09 16:10:48,738] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-09 16:10:48,738] INFO | base >>> [raw sql] {}
+[2024-10-09 16:10:48,770] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-09 16:10:48,775] INFO | base >>> [generated in 0.00517s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-09 16:10:48,875] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-09 16:10:48,876] INFO | base >>> [raw sql] {}
+[2024-10-09 16:10:48,886] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-09 16:10:48,890] INFO | base >>> [cached since 0.1202s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-09 16:10:48,897] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-09 16:10:48,899] INFO | base >>> [raw sql] {}
+[2024-10-09 16:10:48,910] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-09 16:10:48,911] INFO | base >>> [raw sql] {}
+[2024-10-09 16:10:48,922] INFO | base >>> ROLLBACK
+[2024-10-09 16:10:48,929] INFO | base >>> BEGIN (implicit)
+[2024-10-09 16:10:48,930] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-09 16:10:48,931] INFO | base >>> [raw sql] {}
+[2024-10-09 16:10:48,938] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-09 16:10:48,942] INFO | base >>> [cached since 0.173s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-09 16:10:48,983] INFO | base >>> ROLLBACK
+[2024-10-09 16:10:50,187] INFO | _internal >>> [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:7002
+ * Running on http://172.23.211.142:7002
+[2024-10-09 16:10:50,187] INFO | _internal >>> [33mPress CTRL+C to quit[0m
+[2024-10-09 16:10:50,187] INFO | _internal >>>  * Restarting with stat
+[2024-10-09 16:10:51,566] INFO | base >>> SELECT DATABASE()
+[2024-10-09 16:10:51,567] INFO | base >>> [raw sql] {}
+[2024-10-09 16:10:51,574] INFO | base >>> SELECT @@sql_mode
+[2024-10-09 16:10:51,575] INFO | base >>> [raw sql] {}
+[2024-10-09 16:10:51,579] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-09 16:10:51,581] INFO | base >>> [raw sql] {}
+[2024-10-09 16:10:51,618] INFO | base >>> BEGIN (implicit)
+[2024-10-09 16:10:51,619] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-09 16:10:51,620] INFO | base >>> [raw sql] {}
+[2024-10-09 16:10:51,627] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-09 16:10:51,632] INFO | base >>> [generated in 0.00467s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-09 16:10:51,666] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-09 16:10:51,668] INFO | base >>> [raw sql] {}
+[2024-10-09 16:10:51,674] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-09 16:10:51,679] INFO | base >>> [cached since 0.05216s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-09 16:10:51,690] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-09 16:10:51,692] INFO | base >>> [raw sql] {}
+[2024-10-09 16:10:51,707] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-09 16:10:51,708] INFO | base >>> [raw sql] {}
+[2024-10-09 16:10:51,720] INFO | base >>> ROLLBACK
+[2024-10-09 16:10:51,757] INFO | base >>> BEGIN (implicit)
+[2024-10-09 16:10:51,759] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-09 16:10:51,760] INFO | base >>> [raw sql] {}
+[2024-10-09 16:10:51,768] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-09 16:10:51,774] INFO | base >>> [cached since 0.1473s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-09 16:10:51,813] INFO | base >>> ROLLBACK
+[2024-10-09 16:10:51,883] WARNING | _internal >>>  * Debugger is active!
+[2024-10-09 16:10:51,900] INFO | _internal >>>  * Debugger PIN: 625-751-094
+[2024-10-09 16:24:18,617] INFO | _internal >>>  * Detected change in 'C:\\Users\\Cedel\\OneDrive\\Escritorio\\VeterinarianDB\\VeterinarianDB.py', reloading
+[2024-10-09 16:24:19,693] INFO | _internal >>>  * Restarting with stat
+[2024-10-09 16:24:24,462] INFO | base >>> SELECT DATABASE()
+[2024-10-09 16:24:24,464] INFO | base >>> [raw sql] {}
+[2024-10-09 16:24:24,478] INFO | base >>> SELECT @@sql_mode
+[2024-10-09 16:24:24,480] INFO | base >>> [raw sql] {}
+[2024-10-09 16:24:24,487] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-09 16:24:24,489] INFO | base >>> [raw sql] {}
+[2024-10-09 16:24:24,577] INFO | base >>> BEGIN (implicit)
+[2024-10-09 16:24:24,579] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-09 16:24:24,581] INFO | base >>> [raw sql] {}
+[2024-10-09 16:24:24,695] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-09 16:24:24,700] INFO | base >>> [generated in 0.00680s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-09 16:24:24,871] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-09 16:24:24,873] INFO | base >>> [raw sql] {}
+[2024-10-09 16:24:24,882] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-09 16:24:24,887] INFO | base >>> [cached since 0.1918s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-09 16:24:24,900] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-09 16:24:24,902] INFO | base >>> [raw sql] {}
+[2024-10-09 16:24:24,917] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-09 16:24:24,919] INFO | base >>> [raw sql] {}
+[2024-10-09 16:24:24,934] INFO | base >>> ROLLBACK
+[2024-10-09 16:24:24,943] INFO | base >>> BEGIN (implicit)
+[2024-10-09 16:24:24,944] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-09 16:24:24,948] INFO | base >>> [raw sql] {}
+[2024-10-09 16:24:24,959] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-09 16:24:24,965] INFO | base >>> [cached since 0.2701s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-09 16:24:25,025] INFO | base >>> ROLLBACK
+[2024-10-09 16:24:25,167] WARNING | _internal >>>  * Debugger is active!
+[2024-10-09 16:24:25,185] INFO | _internal >>>  * Debugger PIN: 625-751-094
+[2024-10-09 16:24:46,009] INFO | _internal >>>  * Detected change in 'C:\\Users\\Cedel\\OneDrive\\Escritorio\\VeterinarianDB\\VeterinarianDB.py', reloading
+[2024-10-09 16:24:46,344] INFO | _internal >>>  * Restarting with stat
+[2024-10-09 16:24:49,585] INFO | base >>> SELECT DATABASE()
+[2024-10-09 16:24:49,587] INFO | base >>> [raw sql] {}
+[2024-10-09 16:24:49,599] INFO | base >>> SELECT @@sql_mode
+[2024-10-09 16:24:49,602] INFO | base >>> [raw sql] {}
+[2024-10-09 16:24:49,609] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-09 16:24:49,611] INFO | base >>> [raw sql] {}
+[2024-10-09 16:24:49,690] INFO | base >>> BEGIN (implicit)
+[2024-10-09 16:24:49,692] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-09 16:24:49,693] INFO | base >>> [raw sql] {}
+[2024-10-09 16:24:49,707] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-09 16:24:49,716] INFO | base >>> [generated in 0.00840s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-09 16:24:49,782] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-09 16:24:49,784] INFO | base >>> [raw sql] {}
+[2024-10-09 16:24:49,794] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-09 16:24:49,801] INFO | base >>> [cached since 0.09338s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-09 16:24:49,814] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-09 16:24:49,815] INFO | base >>> [raw sql] {}
+[2024-10-09 16:24:49,828] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-09 16:24:49,830] INFO | base >>> [raw sql] {}
+[2024-10-09 16:24:49,845] INFO | base >>> ROLLBACK
+[2024-10-09 16:24:49,858] INFO | base >>> BEGIN (implicit)
+[2024-10-09 16:24:49,859] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-09 16:24:49,861] INFO | base >>> [raw sql] {}
+[2024-10-09 16:24:49,870] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-09 16:24:49,879] INFO | base >>> [cached since 0.1725s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-09 16:24:49,942] INFO | base >>> ROLLBACK
+[2024-10-09 16:24:50,157] WARNING | _internal >>>  * Debugger is active!
+[2024-10-09 16:24:50,177] INFO | _internal >>>  * Debugger PIN: 625-751-094
+[2024-10-09 16:25:11,247] INFO | VeterinarianDB >>> User Guest accessed /login - POST - Status: 200 OK
+[2024-10-09 16:25:11,248] INFO | _internal >>> 127.0.0.1 - - [09/Oct/2024 16:25:11] "POST /login HTTP/1.1" 200 -
+[2024-10-09 16:25:34,106] INFO | base >>> BEGIN (implicit)
+[2024-10-09 16:25:34,111] INFO | base >>> SELECT appointment.appointment_id, appointment.client_id, appointment.owner_id, appointment.veterinarian_id, appointment.appointment_date, appointment.appointment_time, appointment.reason 
+FROM appointment
+[2024-10-09 16:25:34,122] INFO | base >>> [generated in 0.01571s] {}
+[2024-10-09 16:25:34,286] INFO | VeterinarianDB >>> User regular accessed /appointments - GET - Status: 200 OK
+[2024-10-09 16:25:34,293] INFO | _internal >>> 127.0.0.1 - - [09/Oct/2024 16:25:34] "GET /appointments HTTP/1.1" 200 -
+[2024-10-09 16:56:40,000] INFO | base >>> SELECT DATABASE()
+[2024-10-09 16:56:40,003] INFO | base >>> [raw sql] {}
+[2024-10-09 16:56:40,021] INFO | base >>> SELECT @@sql_mode
+[2024-10-09 16:56:40,023] INFO | base >>> [raw sql] {}
+[2024-10-09 16:56:40,038] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-09 16:56:40,042] INFO | base >>> [raw sql] {}
+[2024-10-09 16:56:40,146] INFO | base >>> BEGIN (implicit)
+[2024-10-09 16:56:40,148] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-09 16:56:40,149] INFO | base >>> [raw sql] {}
+[2024-10-09 16:56:40,230] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-09 16:56:40,235] INFO | base >>> [generated in 0.00505s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-09 16:56:40,489] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-09 16:56:40,491] INFO | base >>> [raw sql] {}
+[2024-10-09 16:56:40,507] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-09 16:56:40,515] INFO | base >>> [cached since 0.2846s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-09 16:56:40,669] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-09 16:56:40,673] INFO | base >>> [raw sql] {}
+[2024-10-09 16:56:40,766] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-09 16:56:40,771] INFO | base >>> [raw sql] {}
+[2024-10-09 16:56:40,886] INFO | base >>> ROLLBACK
+[2024-10-09 16:56:40,906] INFO | base >>> BEGIN (implicit)
+[2024-10-09 16:56:40,910] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-09 16:56:40,912] INFO | base >>> [raw sql] {}
+[2024-10-09 16:56:40,938] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-09 16:56:40,947] INFO | base >>> [cached since 0.7171s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-09 16:56:41,097] INFO | base >>> ROLLBACK
+[2024-10-09 16:56:41,511] INFO | _internal >>> [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:7002
+ * Running on http://172.23.211.142:7002
+[2024-10-09 16:56:41,514] INFO | _internal >>> [33mPress CTRL+C to quit[0m
+[2024-10-09 16:56:41,530] INFO | _internal >>>  * Restarting with stat
+[2024-10-09 16:56:47,124] INFO | base >>> SELECT DATABASE()
+[2024-10-09 16:56:47,125] INFO | base >>> [raw sql] {}
+[2024-10-09 16:56:47,139] INFO | base >>> SELECT @@sql_mode
+[2024-10-09 16:56:47,140] INFO | base >>> [raw sql] {}
+[2024-10-09 16:56:47,146] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-09 16:56:47,148] INFO | base >>> [raw sql] {}
+[2024-10-09 16:56:47,222] INFO | base >>> BEGIN (implicit)
+[2024-10-09 16:56:47,224] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-09 16:56:47,225] INFO | base >>> [raw sql] {}
+[2024-10-09 16:56:47,276] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-09 16:56:47,284] INFO | base >>> [generated in 0.00867s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-09 16:56:47,432] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-09 16:56:47,433] INFO | base >>> [raw sql] {}
+[2024-10-09 16:56:47,451] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-09 16:56:47,457] INFO | base >>> [cached since 0.1813s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-09 16:56:47,474] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-09 16:56:47,475] INFO | base >>> [raw sql] {}
+[2024-10-09 16:56:47,509] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-09 16:56:47,510] INFO | base >>> [raw sql] {}
+[2024-10-09 16:56:47,532] INFO | base >>> ROLLBACK
+[2024-10-09 16:56:47,550] INFO | base >>> BEGIN (implicit)
+[2024-10-09 16:56:47,551] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-09 16:56:47,553] INFO | base >>> [raw sql] {}
+[2024-10-09 16:56:47,568] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-09 16:56:47,574] INFO | base >>> [cached since 0.2986s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-09 16:56:47,638] INFO | base >>> ROLLBACK
+[2024-10-09 16:56:47,758] WARNING | _internal >>>  * Debugger is active!
+[2024-10-09 16:56:47,876] INFO | _internal >>>  * Debugger PIN: 625-751-094
+[2024-10-09 16:57:30,336] INFO | VeterinarianDB >>> User Guest accessed /login - POST - Status: 200 OK
+[2024-10-09 16:57:30,338] INFO | _internal >>> 127.0.0.1 - - [09/Oct/2024 16:57:30] "POST /login HTTP/1.1" 200 -
+[2024-10-09 16:57:54,180] INFO | base >>> BEGIN (implicit)
+[2024-10-09 16:57:54,180] INFO | base >>> SELECT appointment.appointment_id, appointment.client_id, appointment.owner_id, appointment.veterinarian_id, appointment.appointment_date, appointment.appointment_time, appointment.reason 
+FROM appointment
+[2024-10-09 16:57:54,180] INFO | base >>> [generated in 0.00412s] {}
+[2024-10-09 16:57:54,199] INFO | VeterinarianDB >>> User regular accessed /appointments - GET - Status: 200 OK
+[2024-10-09 16:57:54,206] INFO | _internal >>> 127.0.0.1 - - [09/Oct/2024 16:57:54] "GET /appointments HTTP/1.1" 200 -
+[2024-10-09 16:58:00,620] INFO | base >>> SELECT appointment.appointment_id, appointment.client_id, appointment.owner_id, appointment.veterinarian_id, appointment.appointment_date, appointment.appointment_time, appointment.reason 
+FROM appointment
+[2024-10-09 16:58:00,627] INFO | base >>> [cached since 6.446s ago] {}
+[2024-10-09 16:58:00,655] INFO | VeterinarianDB >>> User regular accessed /appointments - GET - Status: 200 OK
+[2024-10-09 16:58:00,662] INFO | _internal >>> 127.0.0.1 - - [09/Oct/2024 16:58:00] "GET /appointments HTTP/1.1" 200 -
+[2024-10-09 16:58:02,347] INFO | base >>> SELECT appointment.appointment_id, appointment.client_id, appointment.owner_id, appointment.veterinarian_id, appointment.appointment_date, appointment.appointment_time, appointment.reason 
+FROM appointment
+[2024-10-09 16:58:02,353] INFO | base >>> [cached since 8.171s ago] {}
+[2024-10-09 16:58:02,373] INFO | VeterinarianDB >>> User regular accessed /appointments - GET - Status: 200 OK
+[2024-10-09 16:58:02,379] INFO | _internal >>> 127.0.0.1 - - [09/Oct/2024 16:58:02] "GET /appointments HTTP/1.1" 200 -
+[2024-10-09 16:58:03,864] INFO | base >>> SELECT appointment.appointment_id, appointment.client_id, appointment.owner_id, appointment.veterinarian_id, appointment.appointment_date, appointment.appointment_time, appointment.reason 
+FROM appointment
+[2024-10-09 16:58:03,868] INFO | base >>> [cached since 9.686s ago] {}
+[2024-10-09 16:58:03,878] INFO | VeterinarianDB >>> User regular accessed /appointments - GET - Status: 200 OK
+[2024-10-09 16:58:03,882] INFO | _internal >>> 127.0.0.1 - - [09/Oct/2024 16:58:03] "GET /appointments HTTP/1.1" 200 -
+[2024-10-09 16:58:05,192] INFO | base >>> SELECT appointment.appointment_id, appointment.client_id, appointment.owner_id, appointment.veterinarian_id, appointment.appointment_date, appointment.appointment_time, appointment.reason 
+FROM appointment
+[2024-10-09 16:58:05,196] INFO | base >>> [cached since 11.01s ago] {}
+[2024-10-09 16:58:05,206] INFO | VeterinarianDB >>> User regular accessed /appointments - GET - Status: 200 OK
+[2024-10-09 16:58:05,209] INFO | _internal >>> 127.0.0.1 - - [09/Oct/2024 16:58:05] "GET /appointments HTTP/1.1" 200 -
+[2024-10-09 16:58:06,946] INFO | extension >>> ratelimit 5 per 1 minute (127.0.0.1) exceeded at endpoint: get_appoitnment
+[2024-10-09 16:58:06,946] INFO | VeterinarianDB >>> User Guest accessed /appointments - GET - Status: 429 TOO MANY REQUESTS
+[2024-10-09 16:58:06,962] INFO | _internal >>> 127.0.0.1 - - [09/Oct/2024 16:58:06] "[31m[1mGET /appointments HTTP/1.1[0m" 429 -
+[2024-10-09 17:01:05,209] INFO | VeterinarianDB >>> User Guest accessed /login - POST - Status: 401 UNAUTHORIZED
+[2024-10-09 17:01:05,212] INFO | _internal >>> 127.0.0.1 - - [09/Oct/2024 17:01:05] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+[2024-10-09 17:01:20,945] INFO | VeterinarianDB >>> User Guest accessed /login - POST - Status: 200 OK
+[2024-10-09 17:01:20,945] INFO | _internal >>> 127.0.0.1 - - [09/Oct/2024 17:01:20] "POST /login HTTP/1.1" 200 -
+[2024-10-09 17:04:30,005] INFO | VeterinarianDB >>> User regular accessed /veterinarians - POST - Status: 403 FORBIDDEN
+[2024-10-09 17:04:30,010] INFO | _internal >>> 127.0.0.1 - - [09/Oct/2024 17:04:30] "[31m[1mPOST /veterinarians HTTP/1.1[0m" 403 -
+[2024-10-09 17:04:54,888] INFO | VeterinarianDB >>> User Guest accessed /login - POST - Status: 200 OK
+[2024-10-09 17:04:54,889] INFO | _internal >>> 127.0.0.1 - - [09/Oct/2024 17:04:54] "POST /login HTTP/1.1" 200 -
+[2024-10-09 17:05:39,003] INFO | base >>> SELECT veterinarian.veterinarian_id, veterinarian.veterinarian_first_name, veterinarian.veterinarian_last_name, veterinarian.veterinarian_phone, veterinarian.veterinarian_direction, veterinarian.specialization 
+FROM veterinarian 
+WHERE veterinarian.veterinarian_id = %(veterinarian_id_1)s
+[2024-10-09 17:05:39,009] INFO | base >>> [generated in 0.00636s] {'veterinarian_id_1': '5'}
+[2024-10-09 17:05:39,199] INFO | base >>> INSERT INTO veterinarian (veterinarian_id, veterinarian_first_name, veterinarian_last_name, veterinarian_phone, veterinarian_direction, specialization) VALUES (%(veterinarian_id)s, %(veterinarian_first_name)s, %(veterinarian_last_name)s, %(veterinarian_phone)s, %(veterinarian_direction)s, %(specialization)s)
+[2024-10-09 17:05:39,202] INFO | base >>> [generated in 0.00313s] {'veterinarian_id': '5', 'veterinarian_first_name': 'Alan', 'veterinarian_last_name': 'Walker', 'veterinarian_phone': '0961452365', 'veterinarian_direction': 'Argentina', 'specialization': 'Cats'}
+[2024-10-09 17:05:39,307] INFO | VeterinarianDB >>> User admin accessed /veterinarians - POST - Status: 201 CREATED
+[2024-10-09 17:05:39,311] INFO | _internal >>> 127.0.0.1 - - [09/Oct/2024 17:05:39] "[35m[1mPOST /veterinarians HTTP/1.1[0m" 201 -
+[2024-10-16 14:32:20,393] INFO | base >>> SELECT DATABASE()
+[2024-10-16 14:32:20,396] INFO | base >>> [raw sql] {}
+[2024-10-16 14:32:20,412] INFO | base >>> SELECT @@sql_mode
+[2024-10-16 14:32:20,414] INFO | base >>> [raw sql] {}
+[2024-10-16 14:32:20,428] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-16 14:32:20,431] INFO | base >>> [raw sql] {}
+[2024-10-16 14:32:20,515] INFO | base >>> BEGIN (implicit)
+[2024-10-16 14:32:20,517] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-16 14:32:20,519] INFO | base >>> [raw sql] {}
+[2024-10-16 14:32:20,568] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-16 14:32:20,574] INFO | base >>> [generated in 0.00658s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-16 14:32:20,711] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-16 14:32:20,713] INFO | base >>> [raw sql] {}
+[2024-10-16 14:32:20,730] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-16 14:32:20,736] INFO | base >>> [cached since 0.1679s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-16 14:32:20,762] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-16 14:32:20,764] INFO | base >>> [raw sql] {}
+[2024-10-16 14:32:20,783] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-16 14:32:20,784] INFO | base >>> [raw sql] {}
+[2024-10-16 14:32:20,801] INFO | base >>> ROLLBACK
+[2024-10-16 14:32:20,815] INFO | base >>> BEGIN (implicit)
+[2024-10-16 14:32:20,816] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-16 14:32:20,819] INFO | base >>> [raw sql] {}
+[2024-10-16 14:32:20,832] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-16 14:32:20,840] INFO | base >>> [cached since 0.2719s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-16 14:32:20,913] INFO | base >>> ROLLBACK
+[2024-10-16 14:32:22,212] INFO | _internal >>> [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:7002
+ * Running on http://192.168.0.131:7002
+[2024-10-16 14:32:22,214] INFO | _internal >>> [33mPress CTRL+C to quit[0m
+[2024-10-16 14:32:22,224] INFO | _internal >>>  * Restarting with stat
+[2024-10-16 14:32:25,051] INFO | base >>> SELECT DATABASE()
+[2024-10-16 14:32:25,053] INFO | base >>> [raw sql] {}
+[2024-10-16 14:32:25,064] INFO | base >>> SELECT @@sql_mode
+[2024-10-16 14:32:25,065] INFO | base >>> [raw sql] {}
+[2024-10-16 14:32:25,074] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-16 14:32:25,077] INFO | base >>> [raw sql] {}
+[2024-10-16 14:32:25,154] INFO | base >>> BEGIN (implicit)
+[2024-10-16 14:32:25,155] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-16 14:32:25,156] INFO | base >>> [raw sql] {}
+[2024-10-16 14:32:25,166] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-16 14:32:25,172] INFO | base >>> [generated in 0.00671s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-16 14:32:25,236] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-16 14:32:25,238] INFO | base >>> [raw sql] {}
+[2024-10-16 14:32:25,246] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-16 14:32:25,252] INFO | base >>> [cached since 0.08708s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-16 14:32:25,276] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-16 14:32:25,280] INFO | base >>> [raw sql] {}
+[2024-10-16 14:32:25,300] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-16 14:32:25,304] INFO | base >>> [raw sql] {}
+[2024-10-16 14:32:25,319] INFO | base >>> ROLLBACK
+[2024-10-16 14:32:25,330] INFO | base >>> BEGIN (implicit)
+[2024-10-16 14:32:25,332] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-16 14:32:25,334] INFO | base >>> [raw sql] {}
+[2024-10-16 14:32:25,342] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-16 14:32:25,348] INFO | base >>> [cached since 0.1825s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-16 14:32:25,404] INFO | base >>> ROLLBACK
+[2024-10-16 14:32:25,532] WARNING | _internal >>>  * Debugger is active!
+[2024-10-16 14:32:25,553] INFO | _internal >>>  * Debugger PIN: 625-751-094
+[2024-10-16 14:33:25,775] INFO | base >>> BEGIN (implicit)
+[2024-10-16 14:33:25,775] INFO | base >>> SELECT appointment.appointment_id, appointment.client_id, appointment.owner_id, appointment.veterinarian_id, appointment.appointment_date, appointment.appointment_time, appointment.reason 
+FROM appointment
+[2024-10-16 14:33:25,786] INFO | base >>> [generated in 0.00692s] {}
+[2024-10-16 14:33:25,873] INFO | VeterinarianDB >>> User Guest accessed /appointments - GET - Status: 200 OK
+[2024-10-16 14:33:25,876] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 14:33:25] "GET /appointments HTTP/1.1" 200 -
+[2024-10-16 14:33:34,384] INFO | VeterinarianDB >>> User Guest accessed /appointments - GET - Status: 403 FORBIDDEN
+[2024-10-16 14:33:34,386] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 14:33:34] "[31m[1mGET /appointments HTTP/1.1[0m" 403 -
+[2024-10-16 14:34:47,086] INFO | _internal >>>  * Detected change in 'C:\\Users\\Cedel\\OneDrive\\Escritorio\\VeterinarianDB\\VeterinarianDB.py', reloading
+[2024-10-16 14:34:47,817] INFO | _internal >>>  * Restarting with stat
+[2024-10-16 14:34:51,660] INFO | base >>> SELECT DATABASE()
+[2024-10-16 14:34:51,663] INFO | base >>> [raw sql] {}
+[2024-10-16 14:34:51,697] INFO | base >>> SELECT @@sql_mode
+[2024-10-16 14:34:51,700] INFO | base >>> [raw sql] {}
+[2024-10-16 14:34:51,715] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-16 14:34:51,720] INFO | base >>> [raw sql] {}
+[2024-10-16 14:34:51,799] INFO | base >>> BEGIN (implicit)
+[2024-10-16 14:34:51,800] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-16 14:34:51,801] INFO | base >>> [raw sql] {}
+[2024-10-16 14:34:51,838] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-16 14:34:51,844] INFO | base >>> [generated in 0.00604s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-16 14:34:52,002] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-16 14:34:52,004] INFO | base >>> [raw sql] {}
+[2024-10-16 14:34:52,014] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-16 14:34:52,021] INFO | base >>> [cached since 0.1831s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-16 14:34:52,054] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-16 14:34:52,056] INFO | base >>> [raw sql] {}
+[2024-10-16 14:34:52,074] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-16 14:34:52,076] INFO | base >>> [raw sql] {}
+[2024-10-16 14:34:52,089] INFO | base >>> ROLLBACK
+[2024-10-16 14:34:52,104] INFO | base >>> BEGIN (implicit)
+[2024-10-16 14:34:52,106] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-16 14:34:52,110] INFO | base >>> [raw sql] {}
+[2024-10-16 14:34:52,118] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-16 14:34:52,127] INFO | base >>> [cached since 0.2881s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-16 14:34:52,185] INFO | base >>> ROLLBACK
+[2024-10-16 14:35:35,623] INFO | base >>> SELECT DATABASE()
+[2024-10-16 14:35:35,625] INFO | base >>> [raw sql] {}
+[2024-10-16 14:35:35,635] INFO | base >>> SELECT @@sql_mode
+[2024-10-16 14:35:35,636] INFO | base >>> [raw sql] {}
+[2024-10-16 14:35:35,643] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-16 14:35:35,652] INFO | base >>> [raw sql] {}
+[2024-10-16 14:35:35,715] INFO | base >>> BEGIN (implicit)
+[2024-10-16 14:35:35,716] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-16 14:35:35,717] INFO | base >>> [raw sql] {}
+[2024-10-16 14:35:35,727] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-16 14:35:35,730] INFO | base >>> [generated in 0.00356s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-16 14:35:35,777] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-16 14:35:35,779] INFO | base >>> [raw sql] {}
+[2024-10-16 14:35:35,786] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-16 14:35:35,790] INFO | base >>> [cached since 0.06364s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-16 14:35:35,801] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-16 14:35:35,803] INFO | base >>> [raw sql] {}
+[2024-10-16 14:35:35,814] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-16 14:35:35,816] INFO | base >>> [raw sql] {}
+[2024-10-16 14:35:35,826] INFO | base >>> ROLLBACK
+[2024-10-16 14:35:35,836] INFO | base >>> BEGIN (implicit)
+[2024-10-16 14:35:35,838] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-16 14:35:35,839] INFO | base >>> [raw sql] {}
+[2024-10-16 14:35:35,848] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-16 14:35:35,851] INFO | base >>> [cached since 0.1247s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-16 14:35:35,891] INFO | base >>> ROLLBACK
+[2024-10-16 14:35:57,479] INFO | base >>> SELECT DATABASE()
+[2024-10-16 14:35:57,481] INFO | base >>> [raw sql] {}
+[2024-10-16 14:35:57,492] INFO | base >>> SELECT @@sql_mode
+[2024-10-16 14:35:57,492] INFO | base >>> [raw sql] {}
+[2024-10-16 14:35:57,500] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-16 14:35:57,502] INFO | base >>> [raw sql] {}
+[2024-10-16 14:35:57,590] INFO | base >>> BEGIN (implicit)
+[2024-10-16 14:35:57,592] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-16 14:35:57,594] INFO | base >>> [raw sql] {}
+[2024-10-16 14:35:57,605] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-16 14:35:57,611] INFO | base >>> [generated in 0.00556s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-16 14:35:57,675] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-16 14:35:57,677] INFO | base >>> [raw sql] {}
+[2024-10-16 14:35:57,685] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-16 14:35:57,690] INFO | base >>> [cached since 0.08533s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-16 14:35:57,705] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-16 14:35:57,707] INFO | base >>> [raw sql] {}
+[2024-10-16 14:35:57,721] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-16 14:35:57,723] INFO | base >>> [raw sql] {}
+[2024-10-16 14:35:57,735] INFO | base >>> ROLLBACK
+[2024-10-16 14:35:57,747] INFO | base >>> BEGIN (implicit)
+[2024-10-16 14:35:57,749] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-16 14:35:57,751] INFO | base >>> [raw sql] {}
+[2024-10-16 14:35:57,760] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-16 14:35:57,765] INFO | base >>> [cached since 0.16s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-16 14:35:57,821] INFO | base >>> ROLLBACK
+[2024-10-16 14:35:59,061] INFO | _internal >>> [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:7002
+ * Running on http://192.168.0.131:7002
+[2024-10-16 14:35:59,063] INFO | _internal >>> [33mPress CTRL+C to quit[0m
+[2024-10-16 14:35:59,069] INFO | _internal >>>  * Restarting with stat
+[2024-10-16 14:36:01,721] INFO | base >>> SELECT DATABASE()
+[2024-10-16 14:36:01,722] INFO | base >>> [raw sql] {}
+[2024-10-16 14:36:01,731] INFO | base >>> SELECT @@sql_mode
+[2024-10-16 14:36:01,733] INFO | base >>> [raw sql] {}
+[2024-10-16 14:36:01,740] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-16 14:36:01,742] INFO | base >>> [raw sql] {}
+[2024-10-16 14:36:01,809] INFO | base >>> BEGIN (implicit)
+[2024-10-16 14:36:01,811] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-16 14:36:01,812] INFO | base >>> [raw sql] {}
+[2024-10-16 14:36:01,821] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-16 14:36:01,826] INFO | base >>> [generated in 0.00482s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-16 14:36:01,880] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-16 14:36:01,882] INFO | base >>> [raw sql] {}
+[2024-10-16 14:36:01,890] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-16 14:36:01,895] INFO | base >>> [cached since 0.07341s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-16 14:36:01,905] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-16 14:36:01,907] INFO | base >>> [raw sql] {}
+[2024-10-16 14:36:01,920] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-16 14:36:01,923] INFO | base >>> [raw sql] {}
+[2024-10-16 14:36:01,935] INFO | base >>> ROLLBACK
+[2024-10-16 14:36:01,947] INFO | base >>> BEGIN (implicit)
+[2024-10-16 14:36:01,950] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-16 14:36:01,952] INFO | base >>> [raw sql] {}
+[2024-10-16 14:36:01,962] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-16 14:36:01,968] INFO | base >>> [cached since 0.1467s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-16 14:36:02,028] INFO | base >>> ROLLBACK
+[2024-10-16 14:36:02,161] WARNING | _internal >>>  * Debugger is active!
+[2024-10-16 14:36:02,179] INFO | _internal >>>  * Debugger PIN: 625-751-094
+[2024-10-16 15:08:37,570] INFO | _internal >>>  * Detected change in 'C:\\Users\\Cedel\\OneDrive\\Escritorio\\VeterinarianDB\\VeterinarianDB.py', reloading
+[2024-10-16 15:08:38,476] INFO | _internal >>>  * Restarting with stat
+[2024-10-16 15:08:42,190] INFO | base >>> SELECT DATABASE()
+[2024-10-16 15:08:42,193] INFO | base >>> [raw sql] {}
+[2024-10-16 15:08:42,210] INFO | base >>> SELECT @@sql_mode
+[2024-10-16 15:08:42,212] INFO | base >>> [raw sql] {}
+[2024-10-16 15:08:42,222] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-16 15:08:42,225] INFO | base >>> [raw sql] {}
+[2024-10-16 15:08:42,312] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:08:42,314] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-16 15:08:42,315] INFO | base >>> [raw sql] {}
+[2024-10-16 15:08:42,406] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-16 15:08:42,411] INFO | base >>> [generated in 0.00508s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-16 15:08:42,591] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-16 15:08:42,593] INFO | base >>> [raw sql] {}
+[2024-10-16 15:08:42,605] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-16 15:08:42,610] INFO | base >>> [cached since 0.2049s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-16 15:08:42,626] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-16 15:08:42,628] INFO | base >>> [raw sql] {}
+[2024-10-16 15:08:42,647] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-16 15:08:42,649] INFO | base >>> [raw sql] {}
+[2024-10-16 15:08:42,667] INFO | base >>> ROLLBACK
+[2024-10-16 15:08:42,687] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:08:42,689] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-16 15:08:42,691] INFO | base >>> [raw sql] {}
+[2024-10-16 15:08:42,709] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-16 15:08:42,717] INFO | base >>> [cached since 0.311s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-16 15:08:42,777] INFO | base >>> ROLLBACK
+[2024-10-16 15:08:42,965] WARNING | _internal >>>  * Debugger is active!
+[2024-10-16 15:08:42,984] INFO | _internal >>>  * Debugger PIN: 625-751-094
+[2024-10-16 15:08:52,106] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:08:52,107] INFO | base >>> SELECT appointment.appointment_id, appointment.client_id, appointment.owner_id, appointment.veterinarian_id, appointment.appointment_date, appointment.appointment_time, appointment.reason 
+FROM appointment
+[2024-10-16 15:08:52,111] INFO | base >>> [generated in 0.00542s] {}
+[2024-10-16 15:08:52,135] INFO | VeterinarianDB >>> User Guest accessed /appointments - GET - Status: 200 OK
+[2024-10-16 15:08:52,138] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 15:08:52] "GET /appointments HTTP/1.1" 200 -
+[2024-10-16 15:08:54,447] INFO | VeterinarianDB >>> User Guest accessed /appointments - GET - Status: 403 FORBIDDEN
+[2024-10-16 15:08:54,462] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 15:08:54] "[31m[1mGET /appointments HTTP/1.1[0m" 403 -
+[2024-10-16 15:09:44,525] INFO | VeterinarianDB >>> User Guest accessed /appointments - GET - Status: 403 FORBIDDEN
+[2024-10-16 15:09:44,527] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 15:09:44] "[31m[1mGET /appointments HTTP/1.1[0m" 403 -
+[2024-10-16 15:09:48,419] INFO | base >>> SELECT appointment.appointment_id, appointment.client_id, appointment.owner_id, appointment.veterinarian_id, appointment.appointment_date, appointment.appointment_time, appointment.reason 
+FROM appointment
+[2024-10-16 15:09:48,421] INFO | base >>> [cached since 56.32s ago] {}
+[2024-10-16 15:09:48,472] INFO | VeterinarianDB >>> User Guest accessed /appointments - GET - Status: 200 OK
+[2024-10-16 15:09:48,474] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 15:09:48] "GET /appointments HTTP/1.1" 200 -
+[2024-10-16 15:09:57,140] INFO | VeterinarianDB >>> User Guest accessed /appointments - GET - Status: 403 FORBIDDEN
+[2024-10-16 15:09:57,142] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 15:09:57] "[31m[1mGET /appointments HTTP/1.1[0m" 403 -
+[2024-10-16 15:10:39,232] INFO | _internal >>>  * Detected change in 'C:\\Users\\Cedel\\OneDrive\\Escritorio\\VeterinarianDB\\VeterinarianDB.py', reloading
+[2024-10-16 15:10:39,802] INFO | _internal >>>  * Restarting with stat
+[2024-10-16 15:10:43,087] INFO | base >>> SELECT DATABASE()
+[2024-10-16 15:10:43,088] INFO | base >>> [raw sql] {}
+[2024-10-16 15:10:43,097] INFO | base >>> SELECT @@sql_mode
+[2024-10-16 15:10:43,098] INFO | base >>> [raw sql] {}
+[2024-10-16 15:10:43,104] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-16 15:10:43,106] INFO | base >>> [raw sql] {}
+[2024-10-16 15:10:43,183] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:10:43,185] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-16 15:10:43,186] INFO | base >>> [raw sql] {}
+[2024-10-16 15:10:43,201] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-16 15:10:43,207] INFO | base >>> [generated in 0.00606s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-16 15:10:43,283] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-16 15:10:43,284] INFO | base >>> [raw sql] {}
+[2024-10-16 15:10:43,294] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-16 15:10:43,300] INFO | base >>> [cached since 0.09813s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-16 15:10:43,316] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-16 15:10:43,317] INFO | base >>> [raw sql] {}
+[2024-10-16 15:10:43,331] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-16 15:10:43,336] INFO | base >>> [raw sql] {}
+[2024-10-16 15:10:43,346] INFO | base >>> ROLLBACK
+[2024-10-16 15:10:43,359] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:10:43,361] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-16 15:10:43,364] INFO | base >>> [raw sql] {}
+[2024-10-16 15:10:43,372] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-16 15:10:43,381] INFO | base >>> [cached since 0.1788s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-16 15:10:43,440] INFO | base >>> ROLLBACK
+[2024-10-16 15:10:43,612] WARNING | _internal >>>  * Debugger is active!
+[2024-10-16 15:10:43,626] INFO | _internal >>>  * Debugger PIN: 625-751-094
+[2024-10-16 15:10:45,863] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:10:45,864] INFO | base >>> SELECT appointment.appointment_id, appointment.client_id, appointment.owner_id, appointment.veterinarian_id, appointment.appointment_date, appointment.appointment_time, appointment.reason 
+FROM appointment
+[2024-10-16 15:10:45,869] INFO | base >>> [generated in 0.00593s] {}
+[2024-10-16 15:10:45,885] INFO | VeterinarianDB >>> User Guest accessed /appointments - GET - Status: 200 OK
+[2024-10-16 15:10:45,888] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 15:10:45] "GET /appointments HTTP/1.1" 200 -
+[2024-10-16 15:10:48,689] INFO | VeterinarianDB >>> User Guest accessed /appointments - GET - Status: 403 FORBIDDEN
+[2024-10-16 15:10:48,690] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 15:10:48] "[31m[1mGET /appointments HTTP/1.1[0m" 403 -
+[2024-10-16 15:11:38,605] INFO | _internal >>>  * Detected change in 'C:\\Users\\Cedel\\OneDrive\\Escritorio\\VeterinarianDB\\VeterinarianDB.py', reloading
+[2024-10-16 15:11:39,015] INFO | _internal >>>  * Restarting with stat
+[2024-10-16 15:11:41,747] INFO | base >>> SELECT DATABASE()
+[2024-10-16 15:11:41,749] INFO | base >>> [raw sql] {}
+[2024-10-16 15:11:41,759] INFO | base >>> SELECT @@sql_mode
+[2024-10-16 15:11:41,761] INFO | base >>> [raw sql] {}
+[2024-10-16 15:11:41,769] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-16 15:11:41,771] INFO | base >>> [raw sql] {}
+[2024-10-16 15:11:41,857] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:11:41,859] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-16 15:11:41,861] INFO | base >>> [raw sql] {}
+[2024-10-16 15:11:41,884] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-16 15:11:41,891] INFO | base >>> [generated in 0.00796s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-16 15:11:41,978] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-16 15:11:41,980] INFO | base >>> [raw sql] {}
+[2024-10-16 15:11:41,992] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-16 15:11:41,998] INFO | base >>> [cached since 0.1148s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-16 15:11:42,014] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-16 15:11:42,017] INFO | base >>> [raw sql] {}
+[2024-10-16 15:11:42,036] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-16 15:11:42,038] INFO | base >>> [raw sql] {}
+[2024-10-16 15:11:42,055] INFO | base >>> ROLLBACK
+[2024-10-16 15:11:42,070] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:11:42,072] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-16 15:11:42,073] INFO | base >>> [raw sql] {}
+[2024-10-16 15:11:42,092] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-16 15:11:42,099] INFO | base >>> [cached since 0.2159s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-16 15:11:42,164] INFO | base >>> ROLLBACK
+[2024-10-16 15:11:42,307] WARNING | _internal >>>  * Debugger is active!
+[2024-10-16 15:11:42,321] INFO | _internal >>>  * Debugger PIN: 625-751-094
+[2024-10-16 15:11:46,755] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:11:46,758] INFO | base >>> SELECT appointment.appointment_id, appointment.client_id, appointment.owner_id, appointment.veterinarian_id, appointment.appointment_date, appointment.appointment_time, appointment.reason 
+FROM appointment
+[2024-10-16 15:11:46,762] INFO | base >>> [generated in 0.00600s] {}
+[2024-10-16 15:11:46,775] INFO | VeterinarianDB >>> User Guest accessed /appointments - GET - Status: 200 OK
+[2024-10-16 15:11:46,779] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 15:11:46] "GET /appointments HTTP/1.1" 200 -
+[2024-10-16 15:11:49,065] INFO | VeterinarianDB >>> User Guest accessed /appointments - GET - Status: 403 FORBIDDEN
+[2024-10-16 15:11:49,066] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 15:11:49] "[31m[1mGET /appointments HTTP/1.1[0m" 403 -
+[2024-10-16 15:11:54,537] INFO | VeterinarianDB >>> User Guest accessed /appointments - GET - Status: 403 FORBIDDEN
+[2024-10-16 15:11:54,538] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 15:11:54] "[31m[1mGET /appointments HTTP/1.1[0m" 403 -
+[2024-10-16 15:12:23,087] INFO | _internal >>>  * Detected change in 'C:\\Users\\Cedel\\OneDrive\\Escritorio\\VeterinarianDB\\VeterinarianDB.py', reloading
+[2024-10-16 15:12:23,507] INFO | _internal >>>  * Restarting with stat
+[2024-10-16 15:12:28,189] INFO | base >>> SELECT DATABASE()
+[2024-10-16 15:12:28,193] INFO | base >>> [raw sql] {}
+[2024-10-16 15:12:28,209] INFO | base >>> SELECT @@sql_mode
+[2024-10-16 15:12:28,211] INFO | base >>> [raw sql] {}
+[2024-10-16 15:12:28,219] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-16 15:12:28,221] INFO | base >>> [raw sql] {}
+[2024-10-16 15:12:28,297] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:12:28,299] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-16 15:12:28,300] INFO | base >>> [raw sql] {}
+[2024-10-16 15:12:28,315] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-16 15:12:28,320] INFO | base >>> [generated in 0.00472s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-16 15:12:28,391] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-16 15:12:28,392] INFO | base >>> [raw sql] {}
+[2024-10-16 15:12:28,403] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-16 15:12:28,408] INFO | base >>> [cached since 0.09323s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-16 15:12:28,420] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-16 15:12:28,422] INFO | base >>> [raw sql] {}
+[2024-10-16 15:12:28,437] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-16 15:12:28,439] INFO | base >>> [raw sql] {}
+[2024-10-16 15:12:28,453] INFO | base >>> ROLLBACK
+[2024-10-16 15:12:28,468] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:12:28,471] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-16 15:12:28,473] INFO | base >>> [raw sql] {}
+[2024-10-16 15:12:28,488] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-16 15:12:28,492] INFO | base >>> [cached since 0.1775s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-16 15:12:28,557] INFO | base >>> ROLLBACK
+[2024-10-16 15:12:28,698] WARNING | _internal >>>  * Debugger is active!
+[2024-10-16 15:12:28,714] INFO | _internal >>>  * Debugger PIN: 625-751-094
+[2024-10-16 15:12:48,609] INFO | _internal >>>  * Detected change in 'C:\\Users\\Cedel\\OneDrive\\Escritorio\\VeterinarianDB\\VeterinarianDB.py', reloading
+[2024-10-16 15:12:49,086] INFO | _internal >>>  * Restarting with stat
+[2024-10-16 15:12:52,406] INFO | base >>> SELECT DATABASE()
+[2024-10-16 15:12:52,408] INFO | base >>> [raw sql] {}
+[2024-10-16 15:12:52,419] INFO | base >>> SELECT @@sql_mode
+[2024-10-16 15:12:52,421] INFO | base >>> [raw sql] {}
+[2024-10-16 15:12:52,432] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-16 15:12:52,434] INFO | base >>> [raw sql] {}
+[2024-10-16 15:12:52,523] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:12:52,526] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-16 15:12:52,527] INFO | base >>> [raw sql] {}
+[2024-10-16 15:12:52,547] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-16 15:12:52,553] INFO | base >>> [generated in 0.00594s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-16 15:12:52,616] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-16 15:12:52,617] INFO | base >>> [raw sql] {}
+[2024-10-16 15:12:52,628] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-16 15:12:52,632] INFO | base >>> [cached since 0.08503s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-16 15:12:52,647] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-16 15:12:52,648] INFO | base >>> [raw sql] {}
+[2024-10-16 15:12:52,662] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-16 15:12:52,663] INFO | base >>> [raw sql] {}
+[2024-10-16 15:12:52,674] INFO | base >>> ROLLBACK
+[2024-10-16 15:12:52,686] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:12:52,688] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-16 15:12:52,689] INFO | base >>> [raw sql] {}
+[2024-10-16 15:12:52,701] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-16 15:12:52,714] INFO | base >>> [cached since 0.1674s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-16 15:12:52,759] INFO | base >>> ROLLBACK
+[2024-10-16 15:12:52,884] WARNING | _internal >>>  * Debugger is active!
+[2024-10-16 15:12:52,898] INFO | _internal >>>  * Debugger PIN: 625-751-094
+[2024-10-16 15:12:58,141] INFO | VeterinarianDB >>> User Guest accessed /appointments - GET - Status: 403 FORBIDDEN
+[2024-10-16 15:12:58,143] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 15:12:58] "[31m[1mGET /appointments HTTP/1.1[0m" 403 -
+[2024-10-16 15:13:00,947] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:13:00,949] INFO | base >>> SELECT appointment.appointment_id, appointment.client_id, appointment.owner_id, appointment.veterinarian_id, appointment.appointment_date, appointment.appointment_time, appointment.reason 
+FROM appointment
+[2024-10-16 15:13:00,953] INFO | base >>> [generated in 0.00672s] {}
+[2024-10-16 15:13:00,968] INFO | VeterinarianDB >>> User Guest accessed /appointments - GET - Status: 200 OK
+[2024-10-16 15:13:00,971] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 15:13:00] "GET /appointments HTTP/1.1" 200 -
+[2024-10-16 15:13:02,679] INFO | VeterinarianDB >>> User Guest accessed /appointments - GET - Status: 403 FORBIDDEN
+[2024-10-16 15:13:02,681] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 15:13:02] "[31m[1mGET /appointments HTTP/1.1[0m" 403 -
+[2024-10-16 15:13:19,546] INFO | _internal >>>  * Detected change in 'C:\\Users\\Cedel\\OneDrive\\Escritorio\\VeterinarianDB\\VeterinarianDB.py', reloading
+[2024-10-16 15:13:20,065] INFO | _internal >>>  * Restarting with stat
+[2024-10-16 15:13:24,839] INFO | base >>> SELECT DATABASE()
+[2024-10-16 15:13:24,846] INFO | base >>> [raw sql] {}
+[2024-10-16 15:13:24,905] INFO | base >>> SELECT @@sql_mode
+[2024-10-16 15:13:24,914] INFO | base >>> [raw sql] {}
+[2024-10-16 15:13:24,925] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-16 15:13:24,929] INFO | base >>> [raw sql] {}
+[2024-10-16 15:13:25,041] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:13:25,043] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-16 15:13:25,045] INFO | base >>> [raw sql] {}
+[2024-10-16 15:13:25,065] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-16 15:13:25,071] INFO | base >>> [generated in 0.00548s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-16 15:13:25,141] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-16 15:13:25,142] INFO | base >>> [raw sql] {}
+[2024-10-16 15:13:25,154] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-16 15:13:25,161] INFO | base >>> [cached since 0.09591s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-16 15:13:25,175] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-16 15:13:25,177] INFO | base >>> [raw sql] {}
+[2024-10-16 15:13:25,192] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-16 15:13:25,194] INFO | base >>> [raw sql] {}
+[2024-10-16 15:13:25,209] INFO | base >>> ROLLBACK
+[2024-10-16 15:13:25,227] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:13:25,230] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-16 15:13:25,232] INFO | base >>> [raw sql] {}
+[2024-10-16 15:13:25,243] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-16 15:13:25,250] INFO | base >>> [cached since 0.1853s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-16 15:13:25,331] INFO | base >>> ROLLBACK
+[2024-10-16 15:13:25,576] WARNING | _internal >>>  * Debugger is active!
+[2024-10-16 15:13:25,593] INFO | _internal >>>  * Debugger PIN: 625-751-094
+[2024-10-16 15:13:37,143] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:13:37,145] INFO | base >>> SELECT appointment.appointment_id, appointment.client_id, appointment.owner_id, appointment.veterinarian_id, appointment.appointment_date, appointment.appointment_time, appointment.reason 
+FROM appointment
+[2024-10-16 15:13:37,149] INFO | base >>> [generated in 0.00610s] {}
+[2024-10-16 15:13:37,166] INFO | VeterinarianDB >>> User Guest accessed /appointments - GET - Status: 200 OK
+[2024-10-16 15:13:37,169] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 15:13:37] "GET /appointments HTTP/1.1" 200 -
+[2024-10-16 15:20:00,388] INFO | _internal >>>  * Detected change in 'C:\\Users\\Cedel\\OneDrive\\Escritorio\\VeterinarianDB\\VeterinarianDB.py', reloading
+[2024-10-16 15:20:00,924] INFO | _internal >>>  * Restarting with stat
+[2024-10-16 15:20:03,327] INFO | base >>> SELECT DATABASE()
+[2024-10-16 15:20:03,328] INFO | base >>> [raw sql] {}
+[2024-10-16 15:20:03,339] INFO | base >>> SELECT @@sql_mode
+[2024-10-16 15:20:03,340] INFO | base >>> [raw sql] {}
+[2024-10-16 15:20:03,346] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-16 15:20:03,347] INFO | base >>> [raw sql] {}
+[2024-10-16 15:20:03,413] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:20:03,415] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-16 15:20:03,415] INFO | base >>> [raw sql] {}
+[2024-10-16 15:20:03,497] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-16 15:20:03,503] INFO | base >>> [generated in 0.00638s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-16 15:20:03,663] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-16 15:20:03,664] INFO | base >>> [raw sql] {}
+[2024-10-16 15:20:03,671] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-16 15:20:03,675] INFO | base >>> [cached since 0.1777s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-16 15:20:03,685] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-16 15:20:03,686] INFO | base >>> [raw sql] {}
+[2024-10-16 15:20:03,696] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-16 15:20:03,696] INFO | base >>> [raw sql] {}
+[2024-10-16 15:20:03,704] INFO | base >>> ROLLBACK
+[2024-10-16 15:20:03,711] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:20:03,712] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-16 15:20:03,713] INFO | base >>> [raw sql] {}
+[2024-10-16 15:20:03,721] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-16 15:20:03,725] INFO | base >>> [cached since 0.2278s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-16 15:20:03,761] INFO | base >>> ROLLBACK
+[2024-10-16 15:20:03,867] WARNING | _internal >>>  * Debugger is active!
+[2024-10-16 15:20:03,885] INFO | _internal >>>  * Debugger PIN: 625-751-094
+[2024-10-16 15:20:07,841] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:20:07,841] INFO | base >>> SELECT appointment.appointment_id, appointment.client_id, appointment.owner_id, appointment.veterinarian_id, appointment.appointment_date, appointment.appointment_time, appointment.reason 
+FROM appointment
+[2024-10-16 15:20:07,850] INFO | base >>> [generated in 0.00270s] {}
+[2024-10-16 15:20:07,901] INFO | VeterinarianDB >>> User Guest accessed /appointments - GET - Status: 200 OK
+[2024-10-16 15:20:07,903] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 15:20:07] "GET /appointments HTTP/1.1" 200 -
+[2024-10-16 15:20:09,712] INFO | base >>> SELECT appointment.appointment_id, appointment.client_id, appointment.owner_id, appointment.veterinarian_id, appointment.appointment_date, appointment.appointment_time, appointment.reason 
+FROM appointment
+[2024-10-16 15:20:09,714] INFO | base >>> [cached since 1.866s ago] {}
+[2024-10-16 15:20:09,721] INFO | VeterinarianDB >>> User Guest accessed /appointments - GET - Status: 200 OK
+[2024-10-16 15:20:09,723] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 15:20:09] "GET /appointments HTTP/1.1" 200 -
+[2024-10-16 15:20:13,804] INFO | base >>> SELECT appointment.appointment_id, appointment.client_id, appointment.owner_id, appointment.veterinarian_id, appointment.appointment_date, appointment.appointment_time, appointment.reason 
+FROM appointment
+[2024-10-16 15:20:13,804] INFO | base >>> [cached since 5.965s ago] {}
+[2024-10-16 15:20:13,818] INFO | VeterinarianDB >>> User Guest accessed /appointments - GET - Status: 200 OK
+[2024-10-16 15:20:13,819] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 15:20:13] "GET /appointments HTTP/1.1" 200 -
+[2024-10-16 15:24:26,340] INFO | _internal >>>  * Detected change in 'C:\\Users\\Cedel\\OneDrive\\Escritorio\\VeterinarianDB\\VeterinarianDB.py', reloading
+[2024-10-16 15:24:26,804] INFO | _internal >>>  * Restarting with stat
+[2024-10-16 15:24:29,259] INFO | base >>> SELECT DATABASE()
+[2024-10-16 15:24:29,260] INFO | base >>> [raw sql] {}
+[2024-10-16 15:24:29,269] INFO | base >>> SELECT @@sql_mode
+[2024-10-16 15:24:29,270] INFO | base >>> [raw sql] {}
+[2024-10-16 15:24:29,276] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-16 15:24:29,278] INFO | base >>> [raw sql] {}
+[2024-10-16 15:24:29,330] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:24:29,330] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-16 15:24:29,330] INFO | base >>> [raw sql] {}
+[2024-10-16 15:24:29,371] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-16 15:24:29,375] INFO | base >>> [generated in 0.00440s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-16 15:24:29,482] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-16 15:24:29,485] INFO | base >>> [raw sql] {}
+[2024-10-16 15:24:29,494] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-16 15:24:29,499] INFO | base >>> [cached since 0.1286s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-16 15:24:29,509] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-16 15:24:29,511] INFO | base >>> [raw sql] {}
+[2024-10-16 15:24:29,523] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-16 15:24:29,525] INFO | base >>> [raw sql] {}
+[2024-10-16 15:24:29,534] INFO | base >>> ROLLBACK
+[2024-10-16 15:24:29,543] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:24:29,544] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-16 15:24:29,545] INFO | base >>> [raw sql] {}
+[2024-10-16 15:24:29,559] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-16 15:24:29,565] INFO | base >>> [cached since 0.1939s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-16 15:24:29,609] INFO | base >>> ROLLBACK
+[2024-10-16 15:24:29,740] WARNING | _internal >>>  * Debugger is active!
+[2024-10-16 15:24:29,758] INFO | _internal >>>  * Debugger PIN: 625-751-094
+[2024-10-16 15:25:05,739] INFO | _internal >>>  * Detected change in 'C:\\Users\\Cedel\\OneDrive\\Escritorio\\VeterinarianDB\\VeterinarianDB.py', reloading
+[2024-10-16 15:25:05,967] INFO | _internal >>>  * Restarting with stat
+[2024-10-16 15:25:07,559] INFO | base >>> SELECT DATABASE()
+[2024-10-16 15:25:07,560] INFO | base >>> [raw sql] {}
+[2024-10-16 15:25:07,566] INFO | base >>> SELECT @@sql_mode
+[2024-10-16 15:25:07,567] INFO | base >>> [raw sql] {}
+[2024-10-16 15:25:07,571] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-16 15:25:07,572] INFO | base >>> [raw sql] {}
+[2024-10-16 15:25:07,612] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:25:07,613] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-16 15:25:07,613] INFO | base >>> [raw sql] {}
+[2024-10-16 15:25:07,624] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-16 15:25:07,627] INFO | base >>> [generated in 0.00326s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-16 15:25:07,663] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-16 15:25:07,664] INFO | base >>> [raw sql] {}
+[2024-10-16 15:25:07,670] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-16 15:25:07,673] INFO | base >>> [cached since 0.0498s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-16 15:25:07,682] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-16 15:25:07,683] INFO | base >>> [raw sql] {}
+[2024-10-16 15:25:07,689] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-16 15:25:07,691] INFO | base >>> [raw sql] {}
+[2024-10-16 15:25:07,698] INFO | base >>> ROLLBACK
+[2024-10-16 15:25:07,705] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:25:07,707] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-16 15:25:07,708] INFO | base >>> [raw sql] {}
+[2024-10-16 15:25:07,715] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-16 15:25:07,718] INFO | base >>> [cached since 0.09505s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-16 15:25:07,750] INFO | base >>> ROLLBACK
+[2024-10-16 15:25:07,834] WARNING | _internal >>>  * Debugger is active!
+[2024-10-16 15:25:07,843] INFO | _internal >>>  * Debugger PIN: 625-751-094
+[2024-10-16 15:26:06,123] INFO | _internal >>>  * Detected change in 'C:\\Users\\Cedel\\OneDrive\\Escritorio\\VeterinarianDB\\VeterinarianDB.py', reloading
+[2024-10-16 15:26:06,308] INFO | _internal >>>  * Restarting with stat
+[2024-10-16 15:26:08,593] INFO | base >>> SELECT DATABASE()
+[2024-10-16 15:26:08,593] INFO | base >>> [raw sql] {}
+[2024-10-16 15:26:08,600] INFO | base >>> SELECT @@sql_mode
+[2024-10-16 15:26:08,600] INFO | base >>> [raw sql] {}
+[2024-10-16 15:26:08,605] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-16 15:26:08,607] INFO | base >>> [raw sql] {}
+[2024-10-16 15:26:08,655] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:26:08,658] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-16 15:26:08,658] INFO | base >>> [raw sql] {}
+[2024-10-16 15:26:08,671] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-16 15:26:08,676] INFO | base >>> [generated in 0.00487s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-16 15:26:08,726] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-16 15:26:08,727] INFO | base >>> [raw sql] {}
+[2024-10-16 15:26:08,733] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-16 15:26:08,737] INFO | base >>> [cached since 0.06581s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-16 15:26:08,745] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-16 15:26:08,746] INFO | base >>> [raw sql] {}
+[2024-10-16 15:26:08,754] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-16 15:26:08,755] INFO | base >>> [raw sql] {}
+[2024-10-16 15:26:08,762] INFO | base >>> ROLLBACK
+[2024-10-16 15:26:08,771] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:26:08,772] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-16 15:26:08,773] INFO | base >>> [raw sql] {}
+[2024-10-16 15:26:08,780] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-16 15:26:08,784] INFO | base >>> [cached since 0.1137s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-16 15:26:08,820] INFO | base >>> ROLLBACK
+[2024-10-16 15:26:35,584] INFO | base >>> SELECT DATABASE()
+[2024-10-16 15:26:35,586] INFO | base >>> [raw sql] {}
+[2024-10-16 15:26:35,591] INFO | base >>> SELECT @@sql_mode
+[2024-10-16 15:26:35,592] INFO | base >>> [raw sql] {}
+[2024-10-16 15:26:35,597] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-16 15:26:35,598] INFO | base >>> [raw sql] {}
+[2024-10-16 15:26:35,645] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:26:35,646] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-16 15:26:35,647] INFO | base >>> [raw sql] {}
+[2024-10-16 15:26:35,658] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-16 15:26:35,661] INFO | base >>> [generated in 0.00366s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-16 15:26:35,706] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-16 15:26:35,707] INFO | base >>> [raw sql] {}
+[2024-10-16 15:26:35,715] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-16 15:26:35,718] INFO | base >>> [cached since 0.06043s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-16 15:26:35,726] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-16 15:26:35,727] INFO | base >>> [raw sql] {}
+[2024-10-16 15:26:35,737] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-16 15:26:35,739] INFO | base >>> [raw sql] {}
+[2024-10-16 15:26:35,746] INFO | base >>> ROLLBACK
+[2024-10-16 15:26:35,754] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:26:35,756] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-16 15:26:35,757] INFO | base >>> [raw sql] {}
+[2024-10-16 15:26:35,763] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-16 15:26:35,768] INFO | base >>> [cached since 0.1101s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-16 15:26:35,809] INFO | base >>> ROLLBACK
+[2024-10-16 15:28:02,102] INFO | base >>> SELECT DATABASE()
+[2024-10-16 15:28:02,103] INFO | base >>> [raw sql] {}
+[2024-10-16 15:28:02,110] INFO | base >>> SELECT @@sql_mode
+[2024-10-16 15:28:02,111] INFO | base >>> [raw sql] {}
+[2024-10-16 15:28:02,116] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-16 15:28:02,118] INFO | base >>> [raw sql] {}
+[2024-10-16 15:28:02,174] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:28:02,175] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-16 15:28:02,177] INFO | base >>> [raw sql] {}
+[2024-10-16 15:28:02,186] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-16 15:28:02,191] INFO | base >>> [generated in 0.00418s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-16 15:28:02,251] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-16 15:28:02,253] INFO | base >>> [raw sql] {}
+[2024-10-16 15:28:02,260] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-16 15:28:02,264] INFO | base >>> [cached since 0.07799s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-16 15:28:02,276] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-16 15:28:02,279] INFO | base >>> [raw sql] {}
+[2024-10-16 15:28:02,289] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-16 15:28:02,291] INFO | base >>> [raw sql] {}
+[2024-10-16 15:28:02,302] INFO | base >>> ROLLBACK
+[2024-10-16 15:28:02,312] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:28:02,313] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-16 15:28:02,315] INFO | base >>> [raw sql] {}
+[2024-10-16 15:28:02,321] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-16 15:28:02,327] INFO | base >>> [cached since 0.1409s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-16 15:28:02,390] INFO | base >>> ROLLBACK
+[2024-10-16 15:28:04,131] INFO | _internal >>> [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:7002
+ * Running on http://192.168.0.131:7002
+[2024-10-16 15:28:04,133] INFO | _internal >>> [33mPress CTRL+C to quit[0m
+[2024-10-16 15:28:04,138] INFO | _internal >>>  * Restarting with stat
+[2024-10-16 15:28:06,131] INFO | base >>> SELECT DATABASE()
+[2024-10-16 15:28:06,132] INFO | base >>> [raw sql] {}
+[2024-10-16 15:28:06,137] INFO | base >>> SELECT @@sql_mode
+[2024-10-16 15:28:06,139] INFO | base >>> [raw sql] {}
+[2024-10-16 15:28:06,143] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-16 15:28:06,143] INFO | base >>> [raw sql] {}
+[2024-10-16 15:28:06,183] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:28:06,183] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-16 15:28:06,183] INFO | base >>> [raw sql] {}
+[2024-10-16 15:28:06,197] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-16 15:28:06,200] INFO | base >>> [generated in 0.00416s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-16 15:28:06,239] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-16 15:28:06,240] INFO | base >>> [raw sql] {}
+[2024-10-16 15:28:06,246] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-16 15:28:06,251] INFO | base >>> [cached since 0.05473s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-16 15:28:06,261] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-16 15:28:06,262] INFO | base >>> [raw sql] {}
+[2024-10-16 15:28:06,270] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-16 15:28:06,271] INFO | base >>> [raw sql] {}
+[2024-10-16 15:28:06,280] INFO | base >>> ROLLBACK
+[2024-10-16 15:28:06,287] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:28:06,289] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-16 15:28:06,290] INFO | base >>> [raw sql] {}
+[2024-10-16 15:28:06,297] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-16 15:28:06,300] INFO | base >>> [cached since 0.1041s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-16 15:28:06,345] INFO | base >>> ROLLBACK
+[2024-10-16 15:28:06,450] WARNING | _internal >>>  * Debugger is active!
+[2024-10-16 15:28:06,451] INFO | _internal >>>  * Debugger PIN: 625-751-094
+[2024-10-16 15:28:18,537] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:28:18,538] INFO | base >>> SELECT veterinarian.veterinarian_id, veterinarian.veterinarian_first_name, veterinarian.veterinarian_last_name, veterinarian.veterinarian_phone, veterinarian.veterinarian_direction, veterinarian.specialization 
+FROM veterinarian
+[2024-10-16 15:28:18,540] INFO | base >>> [generated in 0.00327s] {}
+[2024-10-16 15:28:18,616] INFO | VeterinarianDB >>> User Guest accessed /veterinarians - GET - Status: 200 OK
+[2024-10-16 15:28:18,618] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 15:28:18] "GET /veterinarians HTTP/1.1" 200 -
+[2024-10-16 15:28:36,706] INFO | base >>> SELECT veterinarian.veterinarian_id, veterinarian.veterinarian_first_name, veterinarian.veterinarian_last_name, veterinarian.veterinarian_phone, veterinarian.veterinarian_direction, veterinarian.specialization 
+FROM veterinarian
+[2024-10-16 15:28:36,706] INFO | base >>> [cached since 18.18s ago] {}
+[2024-10-16 15:28:36,725] INFO | VeterinarianDB >>> User Guest accessed /veterinarians - GET - Status: 200 OK
+[2024-10-16 15:28:36,727] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 15:28:36] "GET /veterinarians HTTP/1.1" 200 -
+[2024-10-16 15:33:09,155] INFO | _internal >>>  * Detected change in 'C:\\Users\\Cedel\\OneDrive\\Escritorio\\VeterinarianDB\\VeterinarianDB.py', reloading
+[2024-10-16 15:33:09,531] INFO | _internal >>>  * Restarting with stat
+[2024-10-16 15:33:12,081] INFO | base >>> SELECT DATABASE()
+[2024-10-16 15:33:12,082] INFO | base >>> [raw sql] {}
+[2024-10-16 15:33:12,088] INFO | base >>> SELECT @@sql_mode
+[2024-10-16 15:33:12,089] INFO | base >>> [raw sql] {}
+[2024-10-16 15:33:12,093] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-16 15:33:12,095] INFO | base >>> [raw sql] {}
+[2024-10-16 15:33:12,145] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:33:12,147] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-16 15:33:12,148] INFO | base >>> [raw sql] {}
+[2024-10-16 15:33:12,160] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-16 15:33:12,164] INFO | base >>> [generated in 0.00433s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-16 15:33:12,225] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-16 15:33:12,226] INFO | base >>> [raw sql] {}
+[2024-10-16 15:33:12,234] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-16 15:33:12,238] INFO | base >>> [cached since 0.07748s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-16 15:33:12,247] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-16 15:33:12,248] INFO | base >>> [raw sql] {}
+[2024-10-16 15:33:12,259] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-16 15:33:12,260] INFO | base >>> [raw sql] {}
+[2024-10-16 15:33:12,271] INFO | base >>> ROLLBACK
+[2024-10-16 15:33:12,279] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:33:12,281] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-16 15:33:12,282] INFO | base >>> [raw sql] {}
+[2024-10-16 15:33:12,290] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-16 15:33:12,295] INFO | base >>> [cached since 0.1351s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-16 15:33:12,342] INFO | base >>> ROLLBACK
+[2024-10-16 15:33:12,495] WARNING | _internal >>>  * Debugger is active!
+[2024-10-16 15:33:12,508] INFO | _internal >>>  * Debugger PIN: 625-751-094
+[2024-10-16 15:37:31,180] INFO | _internal >>>  * Detected change in 'C:\\Users\\Cedel\\OneDrive\\Escritorio\\VeterinarianDB\\VeterinarianDB.py', reloading
+[2024-10-16 15:37:31,437] INFO | _internal >>>  * Restarting with stat
+[2024-10-16 15:37:34,000] INFO | base >>> SELECT DATABASE()
+[2024-10-16 15:37:34,001] INFO | base >>> [raw sql] {}
+[2024-10-16 15:37:34,008] INFO | base >>> SELECT @@sql_mode
+[2024-10-16 15:37:34,009] INFO | base >>> [raw sql] {}
+[2024-10-16 15:37:34,013] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-16 15:37:34,016] INFO | base >>> [raw sql] {}
+[2024-10-16 15:37:34,072] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:37:34,073] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-16 15:37:34,074] INFO | base >>> [raw sql] {}
+[2024-10-16 15:37:34,089] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-16 15:37:34,092] INFO | base >>> [generated in 0.00363s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-16 15:37:34,151] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-16 15:37:34,152] INFO | base >>> [raw sql] {}
+[2024-10-16 15:37:34,158] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-16 15:37:34,163] INFO | base >>> [cached since 0.07401s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-16 15:37:34,173] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-16 15:37:34,174] INFO | base >>> [raw sql] {}
+[2024-10-16 15:37:34,184] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-16 15:37:34,185] INFO | base >>> [raw sql] {}
+[2024-10-16 15:37:34,192] INFO | base >>> ROLLBACK
+[2024-10-16 15:37:34,202] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:37:34,203] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-16 15:37:34,205] INFO | base >>> [raw sql] {}
+[2024-10-16 15:37:34,213] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-16 15:37:34,220] INFO | base >>> [cached since 0.1308s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-16 15:37:34,276] INFO | base >>> ROLLBACK
+[2024-10-16 15:37:34,427] WARNING | _internal >>>  * Debugger is active!
+[2024-10-16 15:37:34,442] INFO | _internal >>>  * Debugger PIN: 625-751-094
+[2024-10-16 15:39:28,966] INFO | _internal >>>  * Detected change in 'C:\\Users\\Cedel\\OneDrive\\Escritorio\\VeterinarianDB\\VeterinarianDB.py', reloading
+[2024-10-16 15:39:29,181] INFO | _internal >>>  * Restarting with stat
+[2024-10-16 15:39:31,626] INFO | base >>> SELECT DATABASE()
+[2024-10-16 15:39:31,626] INFO | base >>> [raw sql] {}
+[2024-10-16 15:39:31,633] INFO | base >>> SELECT @@sql_mode
+[2024-10-16 15:39:31,634] INFO | base >>> [raw sql] {}
+[2024-10-16 15:39:31,639] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-16 15:39:31,640] INFO | base >>> [raw sql] {}
+[2024-10-16 15:39:31,691] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:39:31,693] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-16 15:39:31,694] INFO | base >>> [raw sql] {}
+[2024-10-16 15:39:31,705] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-16 15:39:31,710] INFO | base >>> [generated in 0.00507s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-16 15:39:31,755] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-16 15:39:31,756] INFO | base >>> [raw sql] {}
+[2024-10-16 15:39:31,763] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-16 15:39:31,766] INFO | base >>> [cached since 0.06146s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-16 15:39:31,774] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-16 15:39:31,776] INFO | base >>> [raw sql] {}
+[2024-10-16 15:39:31,787] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-16 15:39:31,788] INFO | base >>> [raw sql] {}
+[2024-10-16 15:39:31,796] INFO | base >>> ROLLBACK
+[2024-10-16 15:39:31,804] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:39:31,805] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-16 15:39:31,807] INFO | base >>> [raw sql] {}
+[2024-10-16 15:39:31,814] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-16 15:39:31,818] INFO | base >>> [cached since 0.1133s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-16 15:39:31,905] INFO | base >>> ROLLBACK
+[2024-10-16 15:39:32,036] WARNING | _internal >>>  * Debugger is active!
+[2024-10-16 15:39:32,049] INFO | _internal >>>  * Debugger PIN: 625-751-094
+[2024-10-16 15:40:08,695] INFO | VeterinarianDB >>> User Guest accessed /veterinarians - POST - Status: 403 FORBIDDEN
+[2024-10-16 15:40:08,701] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 15:40:08] "[31m[1mPOST /veterinarians HTTP/1.1[0m" 403 -
+[2024-10-16 15:40:23,259] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:40:23,260] INFO | base >>> SELECT veterinarian.veterinarian_id, veterinarian.veterinarian_first_name, veterinarian.veterinarian_last_name, veterinarian.veterinarian_phone, veterinarian.veterinarian_direction, veterinarian.specialization 
+FROM veterinarian 
+WHERE veterinarian.veterinarian_id = %(veterinarian_id_1)s
+[2024-10-16 15:40:23,263] INFO | base >>> [generated in 0.00403s] {'veterinarian_id_1': '5'}
+[2024-10-16 15:40:23,288] INFO | VeterinarianDB >>> User Guest accessed /veterinarians - POST - Status: 409 CONFLICT
+[2024-10-16 15:40:23,290] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 15:40:23] "[31m[1mPOST /veterinarians HTTP/1.1[0m" 409 -
+[2024-10-16 15:41:26,132] INFO | VeterinarianDB >>> User Guest accessed /login - POST - Status: 200 OK
+[2024-10-16 15:41:26,132] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 15:41:26] "POST /login HTTP/1.1" 200 -
+[2024-10-16 15:42:43,544] INFO | base >>> SELECT veterinarian.veterinarian_id, veterinarian.veterinarian_first_name, veterinarian.veterinarian_last_name, veterinarian.veterinarian_phone, veterinarian.veterinarian_direction, veterinarian.specialization 
+FROM veterinarian 
+WHERE veterinarian.veterinarian_id = %(veterinarian_id_1)s
+[2024-10-16 15:42:43,546] INFO | base >>> [cached since 140.3s ago] {'veterinarian_id_1': '5'}
+[2024-10-16 15:42:43,554] INFO | base >>> DELETE FROM veterinarian WHERE veterinarian.veterinarian_id = %(veterinarian_id_1)s
+[2024-10-16 15:42:43,555] INFO | base >>> [generated in 0.00148s] {'veterinarian_id_1': '5'}
+[2024-10-16 15:42:43,680] INFO | VeterinarianDB >>> User admin accessed /veterinarians/5 - DELETE - Status: 200 OK
+[2024-10-16 15:42:43,684] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 15:42:43] "DELETE /veterinarians/5 HTTP/1.1" 200 -
+[2024-10-16 15:42:51,267] INFO | base >>> SELECT veterinarian.veterinarian_id, veterinarian.veterinarian_first_name, veterinarian.veterinarian_last_name, veterinarian.veterinarian_phone, veterinarian.veterinarian_direction, veterinarian.specialization 
+FROM veterinarian 
+WHERE veterinarian.veterinarian_id = %(veterinarian_id_1)s
+[2024-10-16 15:42:51,271] INFO | base >>> [cached since 148s ago] {'veterinarian_id_1': '5'}
+[2024-10-16 15:42:51,285] INFO | base >>> INSERT INTO veterinarian (veterinarian_id, veterinarian_first_name, veterinarian_last_name, veterinarian_phone, veterinarian_direction, specialization) VALUES (%(veterinarian_id)s, %(veterinarian_first_name)s, %(veterinarian_last_name)s, %(veterinarian_phone)s, %(veterinarian_direction)s, %(specialization)s)
+[2024-10-16 15:42:51,289] INFO | base >>> [generated in 0.00368s] {'veterinarian_id': '5', 'veterinarian_first_name': 'Alan', 'veterinarian_last_name': 'Walker', 'veterinarian_phone': '0961452365', 'veterinarian_direction': 'Argentina', 'specialization': 'Cats'}
+[2024-10-16 15:42:51,334] INFO | VeterinarianDB >>> User Guest accessed /veterinarians - POST - Status: 201 CREATED
+[2024-10-16 15:42:51,336] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 15:42:51] "[35m[1mPOST /veterinarians HTTP/1.1[0m" 201 -
+[2024-10-16 15:42:57,041] INFO | base >>> SELECT veterinarian.veterinarian_id, veterinarian.veterinarian_first_name, veterinarian.veterinarian_last_name, veterinarian.veterinarian_phone, veterinarian.veterinarian_direction, veterinarian.specialization 
+FROM veterinarian 
+WHERE veterinarian.veterinarian_id = %(veterinarian_id_1)s
+[2024-10-16 15:42:57,046] INFO | base >>> [cached since 153.8s ago] {'veterinarian_id_1': '5'}
+[2024-10-16 15:42:57,053] INFO | base >>> DELETE FROM veterinarian WHERE veterinarian.veterinarian_id = %(veterinarian_id_1)s
+[2024-10-16 15:42:57,055] INFO | base >>> [cached since 13.5s ago] {'veterinarian_id_1': '5'}
+[2024-10-16 15:42:57,071] INFO | VeterinarianDB >>> User admin accessed /veterinarians/5 - DELETE - Status: 200 OK
+[2024-10-16 15:42:57,073] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 15:42:57] "DELETE /veterinarians/5 HTTP/1.1" 200 -
+[2024-10-16 15:43:06,745] INFO | _internal >>>  * Detected change in 'C:\\Users\\Cedel\\OneDrive\\Escritorio\\VeterinarianDB\\VeterinarianDB.py', reloading
+[2024-10-16 15:43:06,994] INFO | _internal >>>  * Restarting with stat
+[2024-10-16 15:43:09,117] INFO | base >>> SELECT DATABASE()
+[2024-10-16 15:43:09,119] INFO | base >>> [raw sql] {}
+[2024-10-16 15:43:09,130] INFO | base >>> SELECT @@sql_mode
+[2024-10-16 15:43:09,130] INFO | base >>> [raw sql] {}
+[2024-10-16 15:43:09,135] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-16 15:43:09,137] INFO | base >>> [raw sql] {}
+[2024-10-16 15:43:09,176] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:43:09,176] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-16 15:43:09,176] INFO | base >>> [raw sql] {}
+[2024-10-16 15:43:09,197] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-16 15:43:09,200] INFO | base >>> [generated in 0.00344s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-16 15:43:09,247] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-16 15:43:09,248] INFO | base >>> [raw sql] {}
+[2024-10-16 15:43:09,255] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-16 15:43:09,259] INFO | base >>> [cached since 0.06285s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-16 15:43:09,270] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-16 15:43:09,271] INFO | base >>> [raw sql] {}
+[2024-10-16 15:43:09,281] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-16 15:43:09,283] INFO | base >>> [raw sql] {}
+[2024-10-16 15:43:09,291] INFO | base >>> ROLLBACK
+[2024-10-16 15:43:09,299] INFO | base >>> BEGIN (implicit)
+[2024-10-16 15:43:09,300] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-16 15:43:09,301] INFO | base >>> [raw sql] {}
+[2024-10-16 15:43:09,307] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-16 15:43:09,313] INFO | base >>> [cached since 0.1164s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-16 15:43:09,353] INFO | base >>> ROLLBACK
+[2024-10-16 15:43:09,458] WARNING | _internal >>>  * Debugger is active!
+[2024-10-16 15:43:09,476] INFO | _internal >>>  * Debugger PIN: 625-751-094
+[2024-10-16 15:43:34,605] INFO | VeterinarianDB >>> User Guest accessed /veterinarians - POST - Status: 403 FORBIDDEN
+[2024-10-16 15:43:34,607] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 15:43:34] "[31m[1mPOST /veterinarians HTTP/1.1[0m" 403 -
+[2024-10-16 16:22:13,823] INFO | base >>> SELECT DATABASE()
+[2024-10-16 16:22:13,824] INFO | base >>> [raw sql] {}
+[2024-10-16 16:22:13,837] INFO | base >>> SELECT @@sql_mode
+[2024-10-16 16:22:13,839] INFO | base >>> [raw sql] {}
+[2024-10-16 16:22:13,846] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-16 16:22:13,847] INFO | base >>> [raw sql] {}
+[2024-10-16 16:22:13,906] INFO | base >>> BEGIN (implicit)
+[2024-10-16 16:22:13,907] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-16 16:22:13,908] INFO | base >>> [raw sql] {}
+[2024-10-16 16:22:14,067] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-16 16:22:14,072] INFO | base >>> [generated in 0.00546s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-16 16:22:14,240] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-16 16:22:14,241] INFO | base >>> [raw sql] {}
+[2024-10-16 16:22:14,251] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-16 16:22:14,256] INFO | base >>> [cached since 0.1892s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-16 16:22:14,266] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-16 16:22:14,269] INFO | base >>> [raw sql] {}
+[2024-10-16 16:22:14,283] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-16 16:22:14,285] INFO | base >>> [raw sql] {}
+[2024-10-16 16:22:14,294] INFO | base >>> ROLLBACK
+[2024-10-16 16:22:14,355] INFO | base >>> BEGIN (implicit)
+[2024-10-16 16:22:14,356] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-16 16:22:14,358] INFO | base >>> [raw sql] {}
+[2024-10-16 16:22:14,365] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-16 16:22:14,371] INFO | base >>> [cached since 0.3044s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-16 16:22:14,426] INFO | base >>> ROLLBACK
+[2024-10-16 16:22:15,746] INFO | _internal >>> [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:7002
+ * Running on http://172.23.204.206:7002
+[2024-10-16 16:22:15,748] INFO | _internal >>> [33mPress CTRL+C to quit[0m
+[2024-10-16 16:22:15,753] INFO | _internal >>>  * Restarting with stat
+[2024-10-16 16:22:18,012] INFO | base >>> SELECT DATABASE()
+[2024-10-16 16:22:18,014] INFO | base >>> [raw sql] {}
+[2024-10-16 16:22:18,021] INFO | base >>> SELECT @@sql_mode
+[2024-10-16 16:22:18,022] INFO | base >>> [raw sql] {}
+[2024-10-16 16:22:18,027] INFO | base >>> SELECT @@lower_case_table_names
+[2024-10-16 16:22:18,029] INFO | base >>> [raw sql] {}
+[2024-10-16 16:22:18,080] INFO | base >>> BEGIN (implicit)
+[2024-10-16 16:22:18,082] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-10-16 16:22:18,083] INFO | base >>> [raw sql] {}
+[2024-10-16 16:22:18,091] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-10-16 16:22:18,097] INFO | base >>> [generated in 0.00614s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-10-16 16:22:18,135] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-10-16 16:22:18,136] INFO | base >>> [raw sql] {}
+[2024-10-16 16:22:18,142] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-10-16 16:22:18,148] INFO | base >>> [cached since 0.05642s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-10-16 16:22:18,158] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-10-16 16:22:18,159] INFO | base >>> [raw sql] {}
+[2024-10-16 16:22:18,168] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-10-16 16:22:18,169] INFO | base >>> [raw sql] {}
+[2024-10-16 16:22:18,176] INFO | base >>> ROLLBACK
+[2024-10-16 16:22:18,185] INFO | base >>> BEGIN (implicit)
+[2024-10-16 16:22:18,186] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-10-16 16:22:18,187] INFO | base >>> [raw sql] {}
+[2024-10-16 16:22:18,193] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-10-16 16:22:18,198] INFO | base >>> [cached since 0.1072s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-10-16 16:22:18,251] INFO | base >>> ROLLBACK
+[2024-10-16 16:22:18,392] WARNING | _internal >>>  * Debugger is active!
+[2024-10-16 16:22:18,416] INFO | _internal >>>  * Debugger PIN: 625-751-094
+[2024-10-16 16:31:20,214] INFO | base >>> BEGIN (implicit)
+[2024-10-16 16:31:20,215] INFO | base >>> SELECT appointment.appointment_id, appointment.client_id, appointment.owner_id, appointment.veterinarian_id, appointment.appointment_date, appointment.appointment_time, appointment.reason 
+FROM appointment
+[2024-10-16 16:31:20,218] INFO | base >>> [generated in 0.00482s] {}
+[2024-10-16 16:31:20,396] INFO | VeterinarianDB >>> User Guest accessed /appointments - GET - Status: 200 OK
+[2024-10-16 16:31:20,401] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 16:31:20] "GET /appointments HTTP/1.1" 200 -
+[2024-10-16 16:31:31,499] INFO | base >>> SELECT appointment.appointment_id, appointment.client_id, appointment.owner_id, appointment.veterinarian_id, appointment.appointment_date, appointment.appointment_time, appointment.reason 
+FROM appointment
+[2024-10-16 16:31:31,501] INFO | base >>> [cached since 11.29s ago] {}
+[2024-10-16 16:31:31,508] INFO | VeterinarianDB >>> User Guest accessed /appointments - GET - Status: 200 OK
+[2024-10-16 16:31:31,510] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 16:31:31] "GET /appointments HTTP/1.1" 200 -
+[2024-10-16 16:31:38,966] INFO | VeterinarianDB >>> User Guest accessed /appointments - GET - Status: 403 FORBIDDEN
+[2024-10-16 16:31:38,968] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 16:31:38] "[31m[1mGET /appointments HTTP/1.1[0m" 403 -
+[2024-10-16 16:31:52,291] INFO | base >>> SELECT veterinarian.veterinarian_id, veterinarian.veterinarian_first_name, veterinarian.veterinarian_last_name, veterinarian.veterinarian_phone, veterinarian.veterinarian_direction, veterinarian.specialization 
+FROM veterinarian
+[2024-10-16 16:31:52,291] INFO | base >>> [generated in 0.00183s] {}
+[2024-10-16 16:31:52,330] INFO | VeterinarianDB >>> User Guest accessed /veterinarians - GET - Status: 200 OK
+[2024-10-16 16:31:52,331] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 16:31:52] "GET /veterinarians HTTP/1.1" 200 -
+[2024-10-16 16:32:28,154] INFO | VeterinarianDB >>> User Guest accessed /veterinarians - POST - Status: 403 FORBIDDEN
+[2024-10-16 16:32:28,154] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 16:32:28] "[31m[1mPOST /veterinarians HTTP/1.1[0m" 403 -
+[2024-10-16 16:32:41,756] INFO | base >>> SELECT veterinarian.veterinarian_id, veterinarian.veterinarian_first_name, veterinarian.veterinarian_last_name, veterinarian.veterinarian_phone, veterinarian.veterinarian_direction, veterinarian.specialization 
+FROM veterinarian 
+WHERE veterinarian.veterinarian_id = %(veterinarian_id_1)s
+[2024-10-16 16:32:41,761] INFO | base >>> [generated in 0.00494s] {'veterinarian_id_1': '5'}
+[2024-10-16 16:32:41,788] INFO | base >>> INSERT INTO veterinarian (veterinarian_id, veterinarian_first_name, veterinarian_last_name, veterinarian_phone, veterinarian_direction, specialization) VALUES (%(veterinarian_id)s, %(veterinarian_first_name)s, %(veterinarian_last_name)s, %(veterinarian_phone)s, %(veterinarian_direction)s, %(specialization)s)
+[2024-10-16 16:32:41,792] INFO | base >>> [generated in 0.00401s] {'veterinarian_id': '5', 'veterinarian_first_name': 'Alan', 'veterinarian_last_name': 'Walker', 'veterinarian_phone': '0961452365', 'veterinarian_direction': 'Argentina', 'specialization': 'Cats'}
+[2024-10-16 16:32:41,850] INFO | VeterinarianDB >>> User Guest accessed /veterinarians - POST - Status: 201 CREATED
+[2024-10-16 16:32:41,851] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 16:32:41] "[35m[1mPOST /veterinarians HTTP/1.1[0m" 201 -
+[2024-10-16 16:32:49,457] INFO | base >>> SELECT veterinarian.veterinarian_id, veterinarian.veterinarian_first_name, veterinarian.veterinarian_last_name, veterinarian.veterinarian_phone, veterinarian.veterinarian_direction, veterinarian.specialization 
+FROM veterinarian 
+WHERE veterinarian.veterinarian_id = %(veterinarian_id_1)s
+[2024-10-16 16:32:49,457] INFO | base >>> [cached since 7.714s ago] {'veterinarian_id_1': '5'}
+[2024-10-16 16:32:49,488] INFO | VeterinarianDB >>> User Guest accessed /veterinarians - POST - Status: 409 CONFLICT
+[2024-10-16 16:32:49,490] INFO | _internal >>> 127.0.0.1 - - [16/Oct/2024 16:32:49] "[31m[1mPOST /veterinarians HTTP/1.1[0m" 409 -
+[2024-10-16 16:49:10,176] ERROR | base >>> Exception during reset or similar
+Traceback (most recent call last):
+  File "C:\Users\Cedel\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\pool\base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "C:\Users\Cedel\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\pool\base.py", line 1438, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\Cedel\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\engine\default.py", line 692, in do_rollback
+    dbapi_connection.rollback()
+  File "C:\Users\Cedel\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymysql\connections.py", line 488, in rollback
+    self._read_ok_packet()
+  File "C:\Users\Cedel\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymysql\connections.py", line 448, in _read_ok_packet
+    pkt = self._read_packet()
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cedel\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymysql\connections.py", line 739, in _read_packet
+    packet_header = self._read_bytes(4)
+                    ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Cedel\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymysql\connections.py", line 795, in _read_bytes
+    raise err.OperationalError(
+pymysql.err.OperationalError: (2013, 'Lost connection to MySQL server during query')
+[2024-11-20 17:24:26,458] INFO | base >>> SELECT DATABASE()
+[2024-11-20 17:24:26,461] INFO | base >>> [raw sql] {}
+[2024-11-20 17:24:26,488] INFO | base >>> SELECT @@sql_mode
+[2024-11-20 17:24:26,490] INFO | base >>> [raw sql] {}
+[2024-11-20 17:24:26,501] INFO | base >>> SELECT @@lower_case_table_names
+[2024-11-20 17:24:26,505] INFO | base >>> [raw sql] {}
+[2024-11-20 17:24:26,612] INFO | base >>> BEGIN (implicit)
+[2024-11-20 17:24:26,614] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-11-20 17:24:26,616] INFO | base >>> [raw sql] {}
+[2024-11-20 17:24:26,883] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-11-20 17:24:26,888] INFO | base >>> [generated in 0.00600s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-11-20 17:24:27,067] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-11-20 17:24:27,069] INFO | base >>> [raw sql] {}
+[2024-11-20 17:24:27,086] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-11-20 17:24:27,094] INFO | base >>> [cached since 0.2112s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-11-20 17:24:27,107] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-11-20 17:24:27,111] INFO | base >>> [raw sql] {}
+[2024-11-20 17:24:27,134] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-11-20 17:24:27,135] INFO | base >>> [raw sql] {}
+[2024-11-20 17:24:27,161] INFO | base >>> ROLLBACK
+[2024-11-20 17:24:27,206] INFO | base >>> BEGIN (implicit)
+[2024-11-20 17:24:27,212] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-11-20 17:24:27,217] INFO | base >>> [raw sql] {}
+[2024-11-20 17:24:27,237] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-11-20 17:24:27,251] INFO | base >>> [cached since 0.3686s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-11-20 17:24:27,319] INFO | base >>> ROLLBACK
+[2024-11-20 17:24:27,669] INFO | _internal >>> [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:7002
+ * Running on http://172.23.197.189:7002
+[2024-11-20 17:24:27,676] INFO | _internal >>> [33mPress CTRL+C to quit[0m
+[2024-11-20 17:24:27,691] INFO | _internal >>>  * Restarting with stat
+[2024-11-20 17:24:35,080] INFO | base >>> SELECT DATABASE()
+[2024-11-20 17:24:35,123] INFO | base >>> [raw sql] {}
+[2024-11-20 17:24:35,205] INFO | base >>> SELECT @@sql_mode
+[2024-11-20 17:24:35,206] INFO | base >>> [raw sql] {}
+[2024-11-20 17:24:35,218] INFO | base >>> SELECT @@lower_case_table_names
+[2024-11-20 17:24:35,219] INFO | base >>> [raw sql] {}
+[2024-11-20 17:24:35,359] INFO | base >>> BEGIN (implicit)
+[2024-11-20 17:24:35,360] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-11-20 17:24:35,362] INFO | base >>> [raw sql] {}
+[2024-11-20 17:24:35,379] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-11-20 17:24:35,387] INFO | base >>> [generated in 0.00771s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-11-20 17:24:35,516] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-11-20 17:24:35,518] INFO | base >>> [raw sql] {}
+[2024-11-20 17:24:35,529] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-11-20 17:24:35,536] INFO | base >>> [cached since 0.1578s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-11-20 17:24:35,726] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-11-20 17:24:35,729] INFO | base >>> [raw sql] {}
+[2024-11-20 17:24:35,745] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-11-20 17:24:35,748] INFO | base >>> [raw sql] {}
+[2024-11-20 17:24:35,793] INFO | base >>> ROLLBACK
+[2024-11-20 17:24:35,822] INFO | base >>> BEGIN (implicit)
+[2024-11-20 17:24:35,825] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-11-20 17:24:35,827] INFO | base >>> [raw sql] {}
+[2024-11-20 17:24:35,842] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-11-20 17:24:35,853] INFO | base >>> [cached since 0.4753s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-11-20 17:24:36,014] INFO | base >>> ROLLBACK
+[2024-11-20 17:24:36,219] WARNING | _internal >>>  * Debugger is active!
+[2024-11-20 17:24:36,267] INFO | _internal >>>  * Debugger PIN: 625-751-094
+[2024-11-20 17:30:42,029] INFO | _internal >>>  * Detected change in 'C:\\Users\\Cedel\\OneDrive\\Escritorio\\VeterinarianDB\\VeterinarianDB.py', reloading
+[2024-11-20 17:30:43,091] INFO | _internal >>>  * Restarting with stat
+[2024-11-20 17:30:47,350] INFO | base >>> SELECT DATABASE()
+[2024-11-20 17:30:47,352] INFO | base >>> [raw sql] {}
+[2024-11-20 17:30:47,379] INFO | base >>> SELECT @@sql_mode
+[2024-11-20 17:30:47,381] INFO | base >>> [raw sql] {}
+[2024-11-20 17:30:47,400] INFO | base >>> SELECT @@lower_case_table_names
+[2024-11-20 17:30:47,402] INFO | base >>> [raw sql] {}
+[2024-11-20 17:30:47,514] INFO | base >>> BEGIN (implicit)
+[2024-11-20 17:30:47,515] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-11-20 17:30:47,517] INFO | base >>> [raw sql] {}
+[2024-11-20 17:30:47,709] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-11-20 17:30:47,715] INFO | base >>> [generated in 0.00688s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-11-20 17:30:48,214] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-11-20 17:30:48,216] INFO | base >>> [raw sql] {}
+[2024-11-20 17:30:48,245] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-11-20 17:30:48,252] INFO | base >>> [cached since 0.5444s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-11-20 17:30:48,290] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-11-20 17:30:48,298] INFO | base >>> [raw sql] {}
+[2024-11-20 17:30:48,373] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-11-20 17:30:48,378] INFO | base >>> [raw sql] {}
+[2024-11-20 17:30:48,412] INFO | base >>> ROLLBACK
+[2024-11-20 17:30:48,477] INFO | base >>> BEGIN (implicit)
+[2024-11-20 17:30:48,485] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-11-20 17:30:48,487] INFO | base >>> [raw sql] {}
+[2024-11-20 17:30:48,556] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-11-20 17:30:48,579] INFO | base >>> [cached since 0.871s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-11-20 17:30:48,685] INFO | base >>> ROLLBACK
+[2024-11-20 17:30:48,955] WARNING | _internal >>>  * Debugger is active!
+[2024-11-20 17:30:48,983] INFO | _internal >>>  * Debugger PIN: 625-751-094
+[2024-11-20 17:31:52,298] INFO | VeterinarianDB >>> User Guest accessed /login - POST - Status: 200 OK
+[2024-11-20 17:31:52,300] INFO | _internal >>> 127.0.0.1 - - [20/Nov/2024 17:31:52] "POST /login HTTP/1.1" 200 -
+[2024-11-20 17:33:36,929] INFO | base >>> BEGIN (implicit)
+[2024-11-20 17:33:36,930] INFO | base >>> SELECT appointment.appointment_id, appointment.client_id, appointment.owner_id, appointment.veterinarian_id, appointment.appointment_date, appointment.appointment_time, appointment.reason 
+FROM appointment
+[2024-11-20 17:33:36,932] INFO | base >>> [generated in 0.00324s] {}
+[2024-11-20 17:33:36,992] INFO | VeterinarianDB >>> User admin accessed /appointments - GET - Status: 200 OK
+[2024-11-20 17:33:36,994] INFO | _internal >>> 127.0.0.1 - - [20/Nov/2024 17:33:36] "GET /appointments HTTP/1.1" 200 -
+[2024-11-20 17:33:42,526] INFO | base >>> SELECT appointment.appointment_id, appointment.client_id, appointment.owner_id, appointment.veterinarian_id, appointment.appointment_date, appointment.appointment_time, appointment.reason 
+FROM appointment
+[2024-11-20 17:33:42,529] INFO | base >>> [cached since 5.601s ago] {}
+[2024-11-20 17:33:42,537] INFO | VeterinarianDB >>> User admin accessed /appointments - GET - Status: 200 OK
+[2024-11-20 17:33:42,539] INFO | _internal >>> 127.0.0.1 - - [20/Nov/2024 17:33:42] "GET /appointments HTTP/1.1" 200 -
+[2024-11-20 17:33:43,946] INFO | base >>> SELECT appointment.appointment_id, appointment.client_id, appointment.owner_id, appointment.veterinarian_id, appointment.appointment_date, appointment.appointment_time, appointment.reason 
+FROM appointment
+[2024-11-20 17:33:43,947] INFO | base >>> [cached since 7.019s ago] {}
+[2024-11-20 17:33:43,953] INFO | VeterinarianDB >>> User admin accessed /appointments - GET - Status: 200 OK
+[2024-11-20 17:33:43,956] INFO | _internal >>> 127.0.0.1 - - [20/Nov/2024 17:33:43] "GET /appointments HTTP/1.1" 200 -
+[2024-11-20 17:33:45,222] INFO | base >>> SELECT appointment.appointment_id, appointment.client_id, appointment.owner_id, appointment.veterinarian_id, appointment.appointment_date, appointment.appointment_time, appointment.reason 
+FROM appointment
+[2024-11-20 17:33:45,224] INFO | base >>> [cached since 8.295s ago] {}
+[2024-11-20 17:33:45,230] INFO | VeterinarianDB >>> User admin accessed /appointments - GET - Status: 200 OK
+[2024-11-20 17:33:45,233] INFO | _internal >>> 127.0.0.1 - - [20/Nov/2024 17:33:45] "GET /appointments HTTP/1.1" 200 -
+[2024-11-20 17:33:46,501] INFO | base >>> SELECT appointment.appointment_id, appointment.client_id, appointment.owner_id, appointment.veterinarian_id, appointment.appointment_date, appointment.appointment_time, appointment.reason 
+FROM appointment
+[2024-11-20 17:33:46,503] INFO | base >>> [cached since 9.575s ago] {}
+[2024-11-20 17:33:46,509] INFO | VeterinarianDB >>> User admin accessed /appointments - GET - Status: 200 OK
+[2024-11-20 17:33:46,511] INFO | _internal >>> 127.0.0.1 - - [20/Nov/2024 17:33:46] "GET /appointments HTTP/1.1" 200 -
+[2024-11-20 17:33:47,771] INFO | extension >>> ratelimit 5 per 1 minute (127.0.0.1) exceeded at endpoint: get_appoitnment
+[2024-11-20 17:33:47,772] INFO | VeterinarianDB >>> User Guest accessed /appointments - GET - Status: 429 TOO MANY REQUESTS
+[2024-11-20 17:33:47,773] INFO | _internal >>> 127.0.0.1 - - [20/Nov/2024 17:33:47] "[31m[1mGET /appointments HTTP/1.1[0m" 429 -
+[2024-11-20 17:34:32,347] INFO | _internal >>>  * Detected change in 'C:\\Users\\Cedel\\OneDrive\\Escritorio\\VeterinarianDB\\VeterinarianDB.py', reloading
+[2024-11-20 17:34:32,735] INFO | _internal >>>  * Restarting with stat
+[2024-11-20 17:34:35,342] INFO | base >>> SELECT DATABASE()
+[2024-11-20 17:34:35,343] INFO | base >>> [raw sql] {}
+[2024-11-20 17:34:35,349] INFO | base >>> SELECT @@sql_mode
+[2024-11-20 17:34:35,350] INFO | base >>> [raw sql] {}
+[2024-11-20 17:34:35,354] INFO | base >>> SELECT @@lower_case_table_names
+[2024-11-20 17:34:35,356] INFO | base >>> [raw sql] {}
+[2024-11-20 17:34:35,416] INFO | base >>> BEGIN (implicit)
+[2024-11-20 17:34:35,417] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-11-20 17:34:35,417] INFO | base >>> [raw sql] {}
+[2024-11-20 17:34:35,425] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-11-20 17:34:35,430] INFO | base >>> [generated in 0.00502s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-11-20 17:34:35,463] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-11-20 17:34:35,464] INFO | base >>> [raw sql] {}
+[2024-11-20 17:34:35,469] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-11-20 17:34:35,472] INFO | base >>> [cached since 0.04633s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-11-20 17:34:35,480] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-11-20 17:34:35,481] INFO | base >>> [raw sql] {}
+[2024-11-20 17:34:35,488] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-11-20 17:34:35,489] INFO | base >>> [raw sql] {}
+[2024-11-20 17:34:35,495] INFO | base >>> ROLLBACK
+[2024-11-20 17:34:35,501] INFO | base >>> BEGIN (implicit)
+[2024-11-20 17:34:35,502] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-11-20 17:34:35,503] INFO | base >>> [raw sql] {}
+[2024-11-20 17:34:35,509] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-11-20 17:34:35,513] INFO | base >>> [cached since 0.08795s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-11-20 17:34:35,545] INFO | base >>> ROLLBACK
+[2024-11-20 17:34:35,646] WARNING | _internal >>>  * Debugger is active!
+[2024-11-20 17:34:35,655] INFO | _internal >>>  * Debugger PIN: 625-751-094
+[2024-11-20 17:34:52,922] INFO | VeterinarianDB >>> User Guest accessed /login - POST - Status: 401 UNAUTHORIZED
+[2024-11-20 17:34:52,923] INFO | _internal >>> 127.0.0.1 - - [20/Nov/2024 17:34:52] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+[2024-11-20 17:44:30,630] INFO | _internal >>>  * Detected change in 'C:\\Users\\Cedel\\OneDrive\\Escritorio\\VeterinarianDB\\VeterinarianDB.py', reloading
+[2024-11-20 17:44:31,368] INFO | _internal >>>  * Restarting with stat
+[2024-11-20 17:44:34,896] INFO | base >>> SELECT DATABASE()
+[2024-11-20 17:44:34,898] INFO | base >>> [raw sql] {}
+[2024-11-20 17:44:34,912] INFO | base >>> SELECT @@sql_mode
+[2024-11-20 17:44:34,913] INFO | base >>> [raw sql] {}
+[2024-11-20 17:44:34,922] INFO | base >>> SELECT @@lower_case_table_names
+[2024-11-20 17:44:34,923] INFO | base >>> [raw sql] {}
+[2024-11-20 17:44:34,997] INFO | base >>> BEGIN (implicit)
+[2024-11-20 17:44:34,998] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-11-20 17:44:34,999] INFO | base >>> [raw sql] {}
+[2024-11-20 17:44:35,102] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-11-20 17:44:35,105] INFO | base >>> [generated in 0.00348s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-11-20 17:44:35,307] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-11-20 17:44:35,309] INFO | base >>> [raw sql] {}
+[2024-11-20 17:44:35,322] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-11-20 17:44:35,328] INFO | base >>> [cached since 0.2261s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-11-20 17:44:35,344] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-11-20 17:44:35,346] INFO | base >>> [raw sql] {}
+[2024-11-20 17:44:35,360] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-11-20 17:44:35,362] INFO | base >>> [raw sql] {}
+[2024-11-20 17:44:35,375] INFO | base >>> ROLLBACK
+[2024-11-20 17:44:35,385] INFO | base >>> BEGIN (implicit)
+[2024-11-20 17:44:35,386] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-11-20 17:44:35,388] INFO | base >>> [raw sql] {}
+[2024-11-20 17:44:35,399] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-11-20 17:44:35,403] INFO | base >>> [cached since 0.3013s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-11-20 17:44:35,453] INFO | base >>> ROLLBACK
+[2024-11-20 17:44:35,598] WARNING | _internal >>>  * Debugger is active!
+[2024-11-20 17:44:35,629] INFO | _internal >>>  * Debugger PIN: 625-751-094
+[2024-11-20 17:47:05,454] INFO | VeterinarianDB >>> User Guest accessed /login - POST - Status: 200 OK
+[2024-11-20 17:47:05,459] INFO | _internal >>> 127.0.0.1 - - [20/Nov/2024 17:47:05] "POST /login HTTP/1.1" 200 -
+[2024-11-20 18:06:33,073] INFO | VeterinarianDB >>> User Guest accessed /login - POST - Status: 401 UNAUTHORIZED
+[2024-11-20 18:06:33,091] INFO | _internal >>> 127.0.0.1 - - [20/Nov/2024 18:06:33] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+[2024-11-20 18:06:54,519] INFO | VeterinarianDB >>> User Guest accessed /login - POST - Status: 200 OK
+[2024-11-20 18:06:54,521] INFO | _internal >>> 127.0.0.1 - - [20/Nov/2024 18:06:54] "POST /login HTTP/1.1" 200 -
+[2024-11-20 18:07:14,129] INFO | VeterinarianDB >>> User Guest accessed /login - POST - Status: 401 UNAUTHORIZED
+[2024-11-20 18:07:14,130] INFO | _internal >>> 127.0.0.1 - - [20/Nov/2024 18:07:14] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+[2024-11-20 18:09:01,832] INFO | base >>> BEGIN (implicit)
+[2024-11-20 18:09:01,834] INFO | base >>> SELECT appointment.appointment_id, appointment.client_id, appointment.owner_id, appointment.veterinarian_id, appointment.appointment_date, appointment.appointment_time, appointment.reason 
+FROM appointment
+[2024-11-20 18:09:01,838] INFO | base >>> [generated in 0.00594s] {}
+[2024-11-20 18:09:02,020] INFO | VeterinarianDB >>> User admin accessed /appointments - GET - Status: 200 OK
+[2024-11-20 18:09:02,032] INFO | _internal >>> 127.0.0.1 - - [20/Nov/2024 18:09:02] "GET /appointments HTTP/1.1" 200 -
+[2024-11-20 18:09:39,999] INFO | base >>> SELECT appointment.appointment_id, appointment.client_id, appointment.owner_id, appointment.veterinarian_id, appointment.appointment_date, appointment.appointment_time, appointment.reason 
+FROM appointment
+[2024-11-20 18:09:40,001] INFO | base >>> [cached since 38.17s ago] {}
+[2024-11-20 18:09:40,013] INFO | VeterinarianDB >>> User admin accessed /appointments - GET - Status: 200 OK
+[2024-11-20 18:09:40,015] INFO | _internal >>> 127.0.0.1 - - [20/Nov/2024 18:09:40] "GET /appointments HTTP/1.1" 200 -
+[2024-11-20 18:09:41,211] INFO | base >>> SELECT appointment.appointment_id, appointment.client_id, appointment.owner_id, appointment.veterinarian_id, appointment.appointment_date, appointment.appointment_time, appointment.reason 
+FROM appointment
+[2024-11-20 18:09:41,213] INFO | base >>> [cached since 39.38s ago] {}
+[2024-11-20 18:09:41,223] INFO | VeterinarianDB >>> User admin accessed /appointments - GET - Status: 200 OK
+[2024-11-20 18:09:41,225] INFO | _internal >>> 127.0.0.1 - - [20/Nov/2024 18:09:41] "GET /appointments HTTP/1.1" 200 -
+[2024-11-20 18:09:42,199] INFO | base >>> SELECT appointment.appointment_id, appointment.client_id, appointment.owner_id, appointment.veterinarian_id, appointment.appointment_date, appointment.appointment_time, appointment.reason 
+FROM appointment
+[2024-11-20 18:09:42,202] INFO | base >>> [cached since 40.37s ago] {}
+[2024-11-20 18:09:42,209] INFO | VeterinarianDB >>> User admin accessed /appointments - GET - Status: 200 OK
+[2024-11-20 18:09:42,211] INFO | _internal >>> 127.0.0.1 - - [20/Nov/2024 18:09:42] "GET /appointments HTTP/1.1" 200 -
+[2024-11-20 18:09:43,055] INFO | base >>> SELECT appointment.appointment_id, appointment.client_id, appointment.owner_id, appointment.veterinarian_id, appointment.appointment_date, appointment.appointment_time, appointment.reason 
+FROM appointment
+[2024-11-20 18:09:43,058] INFO | base >>> [cached since 41.23s ago] {}
+[2024-11-20 18:09:43,064] INFO | VeterinarianDB >>> User admin accessed /appointments - GET - Status: 200 OK
+[2024-11-20 18:09:43,065] INFO | _internal >>> 127.0.0.1 - - [20/Nov/2024 18:09:43] "GET /appointments HTTP/1.1" 200 -
+[2024-11-20 18:09:44,592] INFO | extension >>> ratelimit 5 per 1 minute (127.0.0.1) exceeded at endpoint: get_appoitnment
+[2024-11-20 18:09:44,598] INFO | VeterinarianDB >>> User Guest accessed /appointments - GET - Status: 429 TOO MANY REQUESTS
+[2024-11-20 18:09:44,598] INFO | _internal >>> 127.0.0.1 - - [20/Nov/2024 18:09:44] "[31m[1mGET /appointments HTTP/1.1[0m" 429 -
+[2024-11-20 18:12:30,571] INFO | _internal >>>  * Detected change in 'C:\\Users\\Cedel\\OneDrive\\Escritorio\\VeterinarianDB\\VeterinarianDB.py', reloading
+[2024-11-20 18:12:31,435] INFO | _internal >>>  * Restarting with stat
+[2024-11-20 18:12:34,881] INFO | base >>> SELECT DATABASE()
+[2024-11-20 18:12:34,883] INFO | base >>> [raw sql] {}
+[2024-11-20 18:12:34,894] INFO | base >>> SELECT @@sql_mode
+[2024-11-20 18:12:34,895] INFO | base >>> [raw sql] {}
+[2024-11-20 18:12:34,901] INFO | base >>> SELECT @@lower_case_table_names
+[2024-11-20 18:12:34,902] INFO | base >>> [raw sql] {}
+[2024-11-20 18:12:34,979] INFO | base >>> BEGIN (implicit)
+[2024-11-20 18:12:34,980] INFO | base >>> SHOW CREATE TABLE `appointment`
+[2024-11-20 18:12:34,984] INFO | base >>> [raw sql] {}
+[2024-11-20 18:12:35,045] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s));
+                
+[2024-11-20 18:12:35,051] INFO | base >>> [generated in 0.00583s] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'clients', 'table_data_1_3': 'owner_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'clients', 'table_data_2_3': 'client_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'veterinarian', 'table_data_3_3': 'veterinarian_id'}
+[2024-11-20 18:12:35,255] INFO | base >>> SHOW CREATE TABLE `clients`
+[2024-11-20 18:12:35,256] INFO | base >>> [raw sql] {}
+[2024-11-20 18:12:35,278] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s));
+                
+[2024-11-20 18:12:35,283] INFO | base >>> [cached since 0.2381s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'owner', 'table_data_1_3': 'owner_id'}
+[2024-11-20 18:12:35,293] INFO | base >>> SHOW CREATE TABLE `owner`
+[2024-11-20 18:12:35,295] INFO | base >>> [raw sql] {}
+[2024-11-20 18:12:35,310] INFO | base >>> SHOW CREATE TABLE `veterinarian`
+[2024-11-20 18:12:35,312] INFO | base >>> [raw sql] {}
+[2024-11-20 18:12:35,325] INFO | base >>> ROLLBACK
+[2024-11-20 18:12:35,336] INFO | base >>> BEGIN (implicit)
+[2024-11-20 18:12:35,337] INFO | base >>> SHOW CREATE TABLE `billing`
+[2024-11-20 18:12:35,338] INFO | base >>> [raw sql] {}
+[2024-11-20 18:12:35,350] INFO | base >>> 
+                    select table_schema, table_name, column_name
+                    from information_schema.columns
+                    where (table_schema, table_name, lower(column_name)) in
+                    ((%(table_data_1_1)s, %(table_data_1_2)s, %(table_data_1_3)s), (%(table_data_2_1)s, %(table_data_2_2)s, %(table_data_2_3)s), (%(table_data_3_1)s, %(table_data_3_2)s, %(table_data_3_3)s), (%(table_data_4_1)s, %(table_data_4_2)s, %(table_data_4_3)s));
+                
+[2024-11-20 18:12:35,353] INFO | base >>> [cached since 0.3084s ago] {'table_data_1_1': 'veterinarian', 'table_data_1_2': 'appointment', 'table_data_1_3': 'veterinarian_id', 'table_data_2_1': 'veterinarian', 'table_data_2_2': 'appointment', 'table_data_2_3': 'appointment_id', 'table_data_3_1': 'veterinarian', 'table_data_3_2': 'appointment', 'table_data_3_3': 'client_id', 'table_data_4_1': 'veterinarian', 'table_data_4_2': 'appointment', 'table_data_4_3': 'owner_id'}
+[2024-11-20 18:12:35,399] INFO | base >>> ROLLBACK
+[2024-11-20 18:12:35,520] WARNING | _internal >>>  * Debugger is active!
+[2024-11-20 18:12:35,540] INFO | _internal >>>  * Debugger PIN: 625-751-094
